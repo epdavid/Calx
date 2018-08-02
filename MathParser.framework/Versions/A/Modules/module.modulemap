@@ -1,0 +1,11 @@
+framework module MathParser {
+  umbrella header "MathParser.h"
+
+  export *
+  module * { export * }
+}
+
+module MathParser.Swift {
+    header "MathParser-Swift.h"
+    requires objc
+}
