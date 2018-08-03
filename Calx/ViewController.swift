@@ -9,37 +9,39 @@
 import Cocoa
 import MathParser
 
-class ViewController: NSViewController, NSTextFieldDelegate {
+class ViewController: NSViewController {
     var parenthAccum:Int = 0 //Parentheses accumulator for matching up closed parentheses
     let evaluator:Evaluator = Evaluator()
+    var justCalculated:Bool = false
     
-    override func controlTextDidChange(_ obj: Notification) {
-        print("working")
+  
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NSApplication.shared.activate(ignoringOtherApps: true) // Makes window active upon loading so calculations can be made straight away
         
-        if (resultField.stringValue.count >= 10 && resultField.font == NSFont.systemFont(ofSize: 56)) {
-            resultField.font = NSFont.systemFont(ofSize: 28)
-        }
-        else if (resultField.stringValue.count >= 18 && resultField.font == NSFont.systemFont(ofSize: 28)) {
-            resultField.font = NSFont.systemFont(ofSize: 14)
-        }
-        else if (resultField.stringValue.count >= 36 && resultField.font == NSFont.systemFont(ofSize: 14)) {
-            resultField.font = NSFont.systemFont(ofSize: 8)
-        }
-        else if (resultField.stringValue.count <= 36 && resultField.font == NSFont.systemFont(ofSize: 8)) {
-            resultField.font = NSFont.systemFont(ofSize: 14)
-        }
-        else if (resultField.stringValue.count <= 18 && resultField.font == NSFont.systemFont(ofSize: 14)) {
-            resultField.font = NSFont.systemFont(ofSize: 28)
-        }
-        else if (resultField.stringValue.count <= 10 && resultField.font == NSFont.systemFont(ofSize: 28)) {
-            resultField.font = NSFont.systemFont(ofSize: 56)
+        resultField.maximumNumberOfLines = 1
+        
+        NSEvent.addLocalMonitorForEvents(matching: .keyDown) {
+            if self.myKeyDown(with: $0) {
+                return nil
+            } else {
+                return $0
+            }
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        resultField.maximumNumberOfLines = 1
-        resultField.delegate = self as NSTextFieldDelegate
+    //FUNCTION FOR HANDLING KEYMAPPINGS. SEE PICTURE.
+    func myKeyDown(with event: NSEvent) -> Bool {
+        // handle keyDown only if current window has focus, i.e. is keyWindow
+        guard let locWindow = self.view.window,
+            NSApplication.shared.keyWindow === locWindow else { return false }
+        switch Int(event.keyCode) {
+            case 124: //Right arrow Key
+                justCalculated = false
+                return true
+            default:
+                return false
+        }
     }
 
     override var representedObject: Any? {
@@ -60,10 +62,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
 // ____________CALCULATOR BUTTONS_____________
     var resultFieldMut:String = "0" {
         didSet {
-            print("working")
             resultField.stringValue = resultFieldMut
             
-            if (resultField.stringValue.count >= 10 && resultField.font == NSFont.systemFont(ofSize: 56)) {
+            if (resultField.stringValue.count >= 9 && resultField.font == NSFont.systemFont(ofSize: 56)) {
                 resultField.font = NSFont.systemFont(ofSize: 28)
             }
             else if (resultField.stringValue.count >= 18 && resultField.font == NSFont.systemFont(ofSize: 28)) {
@@ -72,20 +73,33 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             else if (resultField.stringValue.count >= 36 && resultField.font == NSFont.systemFont(ofSize: 14)) {
                 resultField.font = NSFont.systemFont(ofSize: 8)
             }
-            else if (resultField.stringValue.count <= 36 && resultField.font == NSFont.systemFont(ofSize: 8)) {
+            if (resultField.stringValue.count <= 36 && resultField.font == NSFont.systemFont(ofSize: 8)) {
                 resultField.font = NSFont.systemFont(ofSize: 14)
             }
-            else if (resultField.stringValue.count <= 18 && resultField.font == NSFont.systemFont(ofSize: 14)) {
+            if (resultField.stringValue.count <= 18 && resultField.font == NSFont.systemFont(ofSize: 14)) {
                 resultField.font = NSFont.systemFont(ofSize: 28)
             }
-            else if (resultField.stringValue.count <= 10 && resultField.font == NSFont.systemFont(ofSize: 28)) {
+            if (resultField.stringValue.count <= 9 && resultField.font == NSFont.systemFont(ofSize: 28)) {
                 resultField.font = NSFont.systemFont(ofSize: 56)
             }
         }
     }
     
+    override func moveRight(_ sender: Any?) {
+        print("hi")
+    }
+    
     @IBOutlet var resultField: NSTextField!
     
+    func calcNum(number:Int) {
+        if (resultFieldMut == "0" || justCalculated) {
+            resultFieldMut = "\(number)"
+            justCalculated = false
+        }
+        else {
+            resultFieldMut += "\(number)"
+        }
+    }
     
     @IBAction func calcDel(_ sender: Any) {
         if checkOperator() {
@@ -103,21 +117,31 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         if (resultFieldMut != "0" && !checkOperator()) {
             resultFieldMut += " + "
         }
+        justCalculated = false
     }
     @IBAction func calcMinus(_ sender: Any) {
-        //This one is going to be tricky--think about the logic of it
-        resultFieldMut += " mom"
-        
+        if (resultFieldMut != "0" && !checkOperator()) {
+            resultFieldMut += " - "
+        }
+        else if (resultFieldMut != "0" && resultFieldMut.suffix(1) == " ") {
+            resultFieldMut += "-"
+        }
+        else if (resultFieldMut == "0") {
+            resultFieldMut = "-"
+        }
+        justCalculated = false
     }
     @IBAction func calcMult(_ sender: Any) {
         if (resultFieldMut != "0" && !checkOperator()) {
             resultFieldMut += " * "
         }
+        justCalculated = false
     }
     @IBAction func calcDivide(_ sender: Any) {
         if (resultFieldMut != "0" && !checkOperator()) {
             resultFieldMut += " / "
         }
+        justCalculated = false
     }
     
     @IBAction func calculate(_ sender: Any) {
@@ -127,93 +151,58 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             resultFieldMut = "\(value)"
         }
         catch {}
+        if resultFieldMut.suffix(2) == ".0" {
+            resultFieldMut.removeLast(2)
+        }
+        justCalculated = true
+        
     }
     
     @IBAction func calcDot(_ sender: Any) {
-        if (resultFieldMut == "0") {
-            resultFieldMut = "."
+        if (resultFieldMut == "0" || justCalculated) {
+            resultFieldMut = "0."
+        }
+        else if (resultFieldMut.suffix(1) == " " || resultFieldMut.suffix(1) == "(") {
+            resultFieldMut += "0."
         }
         else {
             resultFieldMut += "."
         }
+        justCalculated = false
     }
     @IBAction func calc0(_ sender: Any) {
         if (resultFieldMut != "0") {
             resultFieldMut += "0"
         }
+        justCalculated = false
     }
    
     @IBAction func calc1(_ sender: Any) {
-        if (resultFieldMut == "0") {
-            resultFieldMut = "1"
-        }
-        else {
-            resultFieldMut += "1"
-        }
+        calcNum(number: 1)
     }
     @IBAction func calc2(_ sender: Any) {
-        if (resultFieldMut == "0") {
-            resultFieldMut = "2"
-        }
-        else {
-            resultFieldMut += "2"
-        }
+        calcNum(number: 2)
     }
     @IBAction func calc3(_ sender: Any) {
-        if (resultFieldMut == "0") {
-            resultFieldMut = "3"
-        }
-        else {
-            resultFieldMut += "3"
-        }
+        calcNum(number: 3)
     }
     @IBAction func calc4(_ sender: Any) {
-        if (resultFieldMut == "0") {
-            resultFieldMut = "4"
-        }
-        else {
-            resultFieldMut += "4"
-        }
+        calcNum(number: 4)
     }
     @IBAction func calc5(_ sender: Any) {
-        if (resultFieldMut == "0") {
-            resultFieldMut = "5"
-        }
-        else {
-            resultFieldMut += "5"
-        }
+        calcNum(number: 5)
     }
     @IBAction func calc6(_ sender: Any) {
-        if (resultFieldMut == "0") {
-            resultFieldMut = "6"
-        }
-        else {
-            resultFieldMut += "6"
-        }
+        calcNum(number: 6)
     }
     @IBAction func calc7(_ sender: Any) {
-        if (resultFieldMut == "0") {
-            resultFieldMut = "7"
-        }
-        else {
-            resultFieldMut += "7"
-        }
+        calcNum(number: 7)
     }
     @IBAction func calc8(_ sender: Any) {
-        if (resultFieldMut == "0") {
-            resultFieldMut = "8"
-        }
-        else {
-            resultFieldMut += "8"
-        }
+        calcNum(number: 8)
     }
     @IBAction func calc9(_ sender: Any) {
-        if (resultFieldMut == "0") {
-            resultFieldMut = "9"
-        }
-        else {
-            resultFieldMut += "9"
-        }
+        calcNum(number: 9)
     }
     @IBAction func calcOpenP(_ sender: Any) {
         if (resultFieldMut == "0") {
@@ -224,30 +213,23 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             resultFieldMut += "("
             parenthAccum += 1
         }
+        justCalculated = false
     }
     @IBAction func calcCloseP(_ sender: Any) {
         if (parenthAccum != 0) {
             resultFieldMut += ")"
             parenthAccum -= 1
         }
-        
+        justCalculated = false
     }
     
     @IBAction func calcClear(_ sender: Any) {
         resultFieldMut = "0"
+        justCalculated = false
     }
     
     
 }
-
-
-
-
-
-
-
-
-
 
 
 
