@@ -14,6 +14,7 @@
 		16AB39FF211245EB0021778A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16AB39FD211245EB0021778A /* Main.storyboard */; };
 		16C51E6921133D0A005866DA /* MathParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16C51E6721133CFA005866DA /* MathParser.framework */; };
 		16C51E6A21133D0A005866DA /* MathParser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16C51E6721133CFA005866DA /* MathParser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		16C761342114F0D20088EFEA /* SYFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C761332114F0D20088EFEA /* SYFlatButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,10 @@
 		16AB3A00211245EB0021778A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16AB3A01211245EB0021778A /* Calx.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Calx.entitlements; sourceTree = "<group>"; };
 		16C51E6721133CFA005866DA /* MathParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MathParser.framework; sourceTree = SOURCE_ROOT; };
+		16C761312114F0D20088EFEA /* Calx-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Calx-Bridging-Header.h"; sourceTree = "<group>"; };
+		16C761322114F0D20088EFEA /* SYFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYFlatButton.h; sourceTree = "<group>"; };
+		16C761332114F0D20088EFEA /* SYFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYFlatButton.m; sourceTree = "<group>"; };
+		16C761352114F3C30088EFEA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,11 +81,15 @@
 				16AB39F7211245E90021778A /* AppDelegate.swift */,
 				16AB39F9211245E90021778A /* ViewController.swift */,
 				168B96A82114A4CD00999B68 /* EventMonitor.swift */,
-				16C51E6721133CFA005866DA /* MathParser.framework */,
 				16AB39FB211245EB0021778A /* Assets.xcassets */,
 				16AB39FD211245EB0021778A /* Main.storyboard */,
+				16C761352114F3C30088EFEA /* README.md */,
 				16AB3A00211245EB0021778A /* Info.plist */,
 				16AB3A01211245EB0021778A /* Calx.entitlements */,
+				16C761312114F0D20088EFEA /* Calx-Bridging-Header.h */,
+				16C761322114F0D20088EFEA /* SYFlatButton.h */,
+				16C761332114F0D20088EFEA /* SYFlatButton.m */,
+				16C51E6721133CFA005866DA /* MathParser.framework */,
 			);
 			path = Calx;
 			sourceTree = "<group>";
@@ -118,6 +127,7 @@
 				TargetAttributes = {
 					16AB39F3211245E90021778A = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -156,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16C761342114F0D20088EFEA /* SYFlatButton.m in Sources */,
 				168B96A92114A4CD00999B68 /* EventMonitor.swift in Sources */,
 				16AB39FA211245E90021778A /* ViewController.swift in Sources */,
 				16AB39F8211245E90021778A /* AppDelegate.swift in Sources */,
@@ -293,6 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Calx/Calx.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -305,9 +317,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evandavid.Calx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Calx/Calx-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -316,6 +330,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Calx/Calx.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -328,9 +343,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.evandavid.Calx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Calx/Calx-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

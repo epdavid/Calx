@@ -13,14 +13,15 @@ class ViewController: NSViewController {
     var parenthAccum:Int = 0 //Parentheses accumulator for matching up closed parentheses
     let evaluator:Evaluator = Evaluator()
     var justCalculated:Bool = false
+    static var normal:Bool = true
+    let pasteboard = NSPasteboard.general
     
   
     override func viewDidLoad() {
         super.viewDidLoad()
         NSApplication.shared.activate(ignoringOtherApps: true) // Makes window active upon loading so calculations can be made straight away
         
-        resultField.maximumNumberOfLines = 1
-        
+        //Monitor for single keystrokes
         NSEvent.addLocalMonitorForEvents(matching: .keyDown) {
             if self.myKeyDown(with: $0) {
                 return nil
@@ -28,9 +29,17 @@ class ViewController: NSViewController {
                 return $0
             }
         }
+        //Monitor for key-combos
+        NSEvent.addLocalMonitorForEvents(matching: .keyDown) {
+            if self.specialMyKeyDown(with: $0) {
+                return nil
+            } else {
+                return $0
+            }
+        }
     }
     
-    //FUNCTION FOR HANDLING KEYMAPPINGS. SEE PICTURE.
+    //Function for handling single keymappings using ints (see appleKeyboardInts.png)
     func myKeyDown(with event: NSEvent) -> Bool {
         // handle keyDown only if current window has focus, i.e. is keyWindow
         guard let locWindow = self.view.window,
@@ -39,9 +48,46 @@ class ViewController: NSViewController {
             case 124: //Right arrow Key
                 justCalculated = false
                 return true
+
+            case 53: //esc key
+                AppDelegate.popover.close()
+                return true
+            case 36: //enter key
+                calculate((Any).self)
+                return true
             default:
                 return false
         }
+    }
+    
+    //Function for handling key-combos using events
+    func specialMyKeyDown(with event: NSEvent) -> Bool {
+        guard let locWindow = self.view.window,
+            NSApplication.shared.keyWindow === locWindow else { return false }
+        switch event.modifierFlags.intersection(.deviceIndependentFlagsMask) {
+        case [.command] where event.characters == "s": //s key
+            if (ViewController.normal) {
+                showScientific()
+            } else {
+                showNormal()
+            }
+            return true
+        default:
+            return false
+        }
+    }
+    
+    func showScientific() -> Void {
+        AppDelegate.popover.contentViewController = ViewController.freshScientificController()
+        AppDelegate.popover.show(relativeTo: AppDelegate.getButton().bounds, of: AppDelegate.getButton(), preferredEdge: NSRectEdge.minY)
+        NSApplication.shared.activate(ignoringOtherApps: true)
+        ViewController.normal = false
+    }
+    func showNormal() -> Void {
+        AppDelegate.popover.contentViewController = ViewController.freshController()
+        AppDelegate.popover.show(relativeTo: AppDelegate.getButton().bounds, of: AppDelegate.getButton(), preferredEdge: NSRectEdge.minY)
+        NSApplication.shared.activate(ignoringOtherApps: true)
+        ViewController.normal = true
     }
 
     override var representedObject: Any? {
@@ -60,9 +106,23 @@ class ViewController: NSViewController {
     }
     
 // ____________CALCULATOR BUTTONS_____________
+    
     var resultFieldMut:String = "0" {
         didSet {
             resultField.stringValue = resultFieldMut
+            
+            //Fixing rounding problem to avoid values less than 1E-8
+            if (Double(resultFieldMut) != nil) {
+                var doubleResult = Double(resultFieldMut)
+                if (abs(doubleResult!) <= 1E-8 && abs(doubleResult!) >= 0) {
+                    doubleResult = floor(abs(doubleResult!))
+                    resultFieldMut = "\(doubleResult!)"
+                    if (resultFieldMut.suffix(2) == ".0") {
+                        resultFieldMut.removeLast(2)
+                    }
+                    resultField.stringValue = resultFieldMut
+                }
+            }
             
             if (resultField.stringValue.count >= 9 && resultField.font == NSFont.systemFont(ofSize: 56)) {
                 resultField.font = NSFont.systemFont(ofSize: 28)
@@ -85,9 +145,6 @@ class ViewController: NSViewController {
         }
     }
     
-    override func moveRight(_ sender: Any?) {
-        print("hi")
-    }
     
     @IBOutlet var resultField: NSTextField!
     
@@ -100,17 +157,32 @@ class ViewController: NSViewController {
             resultFieldMut += "\(number)"
         }
     }
+    func calcNum(str:String) {
+        if (resultFieldMut == "0" || justCalculated) {
+            resultFieldMut = "\(str)"
+            justCalculated = false
+        }
+        else {
+            resultFieldMut += "\(str)"
+        }
+    }
     
     @IBAction func calcDel(_ sender: Any) {
         if checkOperator() {
             resultFieldMut.removeLast(3)
         }
         else if (resultFieldMut != "0" && resultFieldMut.count > 1) {
+            if (resultFieldMut.suffix(1) == "(") {
+                parenthAccum -= 1
+            }
             resultFieldMut.removeLast()
         }
         else if (resultFieldMut.count == 1) {
             resultFieldMut = "0"
+            parenthAccum = 0
         }
+        
+        
     }
     
     @IBAction func calcPlus(_ sender: Any) {
@@ -146,11 +218,18 @@ class ViewController: NSViewController {
     
     @IBAction func calculate(_ sender: Any) {
         do {
+            resultFieldMut = resultFieldMut.replacingOccurrences(of: "^", with: "**")
+            resultFieldMut = resultFieldMut.replacingOccurrences(of: "e²", with: "(e)²")
+            resultFieldMut = resultFieldMut.replacingOccurrences(of: "π²", with: "(π)²")
             let expression = try Expression (string: resultFieldMut)
             let value = try evaluator.evaluate(expression)
-            resultFieldMut = "\(value)"
+            
+            resultFieldMut = "\(value)".replacingOccurrences(of: "**", with: "^")
+        } catch {
+            if (parenthAccum != 0) {
+                changeCopyText(str: "Close your parentheses!")
+            }
         }
-        catch {}
         if resultFieldMut.suffix(2) == ".0" {
             resultFieldMut.removeLast(2)
         }
@@ -171,7 +250,7 @@ class ViewController: NSViewController {
         justCalculated = false
     }
     @IBAction func calc0(_ sender: Any) {
-        if (resultFieldMut != "0") {
+        if (resultFieldMut != "0" && !checkOperator()) {
             resultFieldMut += "0"
         }
         justCalculated = false
@@ -226,7 +305,92 @@ class ViewController: NSViewController {
     @IBAction func calcClear(_ sender: Any) {
         resultFieldMut = "0"
         justCalculated = false
+        parenthAccum = 0
     }
+    
+    
+    @IBAction func copyResult(_ sender: Any) {
+        pasteboard.clearContents()
+        pasteboard.setString(resultFieldMut, forType: .string)
+        changeCopyText(str: "Copied")
+    }
+    
+    func changeCopyText(str:String) {
+        copied.stringValue = str
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.copied.stringValue = " : Copy Result"
+        }
+    }
+    @IBOutlet var copied: NSTextField!
+    
+    
+    //____________SCIENTIFIC CALCULATOR BUTTONS_____________
+    
+    func trigFunctions(function:String) {
+        if (resultFieldMut == "0" || justCalculated) {
+            resultFieldMut = "\(function)("
+            parenthAccum += 1
+        }
+        else {
+            resultFieldMut += "\(function)("
+            parenthAccum += 1
+        }
+        justCalculated = false
+    }
+    
+    @IBAction func sin(_ sender: Any) {
+        trigFunctions(function: "sin")
+    }
+    
+    @IBAction func cos(_ sender: Any) {
+        trigFunctions(function: "cos")
+    }
+    
+    @IBAction func tan(_ sender: Any) {
+        trigFunctions(function: "tan")
+    }
+    
+    @IBAction func pi(_ sender: Any) {
+        calcNum(str: "π")
+    }
+    
+    @IBAction func pow(_ sender: Any) {
+        if (!checkOperator() && resultFieldMut != "0") {
+            resultFieldMut += "^("
+            parenthAccum += 1
+            justCalculated = false
+        }
+    }
+    
+    @IBAction func euler(_ sender: Any) {
+        calcNum(str: "e")
+    }
+    
+    @IBAction func natlog(_ sender: Any) {
+        trigFunctions(function: "ln")
+    }
+    
+    @IBAction func log10(_ sender: Any) {
+        trigFunctions(function: "log")
+    }
+    
+    @IBAction func squared(_ sender: Any) {
+        if (!checkOperator() && resultFieldMut != "0") {
+            resultFieldMut += "²"
+            justCalculated = false
+        }
+    }
+    @IBAction func squareRoot(_ sender: Any) {
+        trigFunctions(function: "√")
+    }
+    
+    @IBAction func factorial(_ sender: Any) {
+        if (resultFieldMut != "0" && !checkOperator()) {
+            resultFieldMut += "!"
+        }
+        justCalculated = false
+    }
+    
     
     
 }
@@ -244,6 +408,15 @@ extension ViewController {
         //3.
         guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? ViewController else {
             fatalError("Why cant i find ViewController? - Check Main.storyboard")
+        }
+        return viewcontroller
+    }
+    
+    static func freshScientificController() -> ViewController {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        let identifier = NSStoryboard.SceneIdentifier(rawValue: "scientific")
+        guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? ViewController else {
+            fatalError("HELP")
         }
         return viewcontroller
     }
