@@ -11,15 +11,24 @@ import MathParser
 
 class ViewController: NSViewController {
     var parenthAccum:Int = 0 //Parentheses accumulator for matching up closed parentheses
-    let evaluator:Evaluator = Evaluator()
+    static var evaluator:Evaluator = Evaluator()
     var justCalculated:Bool = false
     static var normal:Bool = true
     let pasteboard = NSPasteboard.general
+    var answer:String?
+    static let defaults = UserDefaults.standard
     
   
     override func viewDidLoad() {
         super.viewDidLoad()
         NSApplication.shared.activate(ignoringOtherApps: true) // Makes window active upon loading so calculations can be made straight away
+        if (ViewController.defaults.integer(forKey: "angleMode") == 1 && degRad != nil) {
+            ViewController.evaluator.angleMeasurementMode = .degrees
+            degRad.title = "Degrees"
+        } else if (degRad != nil) {
+            ViewController.evaluator.angleMeasurementMode = .radians
+            degRad.title = "Radians"
+        }
         
         //Monitor for single keystrokes
         NSEvent.addLocalMonitorForEvents(matching: .keyDown) {
@@ -37,6 +46,8 @@ class ViewController: NSViewController {
                 return $0
             }
         }
+        
+        
     }
     
     //Function for handling single keymappings using ints (see appleKeyboardInts.png)
@@ -174,7 +185,10 @@ class ViewController: NSViewController {
         else if (resultFieldMut != "0" && resultFieldMut.count > 1) {
             if (resultFieldMut.suffix(1) == "(") {
                 parenthAccum -= 1
+            } else if (resultFieldMut.suffix(1) == ")") {
+                parenthAccum += 1
             }
+            print(parenthAccum)
             resultFieldMut.removeLast()
         }
         else if (resultFieldMut.count == 1) {
@@ -190,6 +204,7 @@ class ViewController: NSViewController {
             resultFieldMut += " + "
         }
         justCalculated = false
+        
     }
     @IBAction func calcMinus(_ sender: Any) {
         if (resultFieldMut != "0" && !checkOperator()) {
@@ -221,20 +236,28 @@ class ViewController: NSViewController {
             resultFieldMut = resultFieldMut.replacingOccurrences(of: "^", with: "**")
             resultFieldMut = resultFieldMut.replacingOccurrences(of: "e²", with: "(e)²")
             resultFieldMut = resultFieldMut.replacingOccurrences(of: "π²", with: "(π)²")
+            resultFieldMut = resultFieldMut.replacingOccurrences(of: "e⁻¹", with: "(e)⁻¹")
+            resultFieldMut = resultFieldMut.replacingOccurrences(of: "π⁻¹", with: "(π)⁻¹")
+            if let ans = answer {
+                resultFieldMut = resultFieldMut.replacingOccurrences(of: "ans", with: ans)
+            }
             let expression = try Expression (string: resultFieldMut)
-            let value = try evaluator.evaluate(expression)
+            let value = try ViewController.evaluator.evaluate(expression)
             
             resultFieldMut = "\(value)".replacingOccurrences(of: "**", with: "^")
         } catch {
             if (parenthAccum != 0) {
                 changeCopyText(str: "Close your parentheses!")
+            } else {
+                changeCopyText(str: "Invalid input")
+                
             }
         }
         if resultFieldMut.suffix(2) == ".0" {
             resultFieldMut.removeLast(2)
         }
         justCalculated = true
-        
+        answer = resultFieldMut
     }
     
     @IBAction func calcDot(_ sender: Any) {
@@ -342,12 +365,24 @@ class ViewController: NSViewController {
         trigFunctions(function: "sin")
     }
     
+    @IBAction func arcsin(_ sender: Any) {
+        trigFunctions(function: "asin")
+    }
+    
     @IBAction func cos(_ sender: Any) {
         trigFunctions(function: "cos")
     }
     
+    @IBAction func arccos(_ sender: Any) {
+        trigFunctions(function: "acos")
+    }
+    
     @IBAction func tan(_ sender: Any) {
         trigFunctions(function: "tan")
+    }
+    
+    @IBAction func arctan(_ sender: Any) {
+        trigFunctions(function: "atan")
     }
     
     @IBAction func pi(_ sender: Any) {
@@ -391,6 +426,49 @@ class ViewController: NSViewController {
         justCalculated = false
     }
     
+    @IBAction func timesTenToThe(_ sender: Any) {
+        if (!checkOperator() && resultFieldMut != "0") {
+            resultFieldMut += "E"
+            justCalculated = false
+        }
+    }
+    
+    @IBAction func oneOver(_ sender: Any) {
+        if (!checkOperator() && resultFieldMut != "0") {
+            resultFieldMut += "⁻¹"
+            justCalculated = false
+        }
+    }
+    @IBAction func percentify(_ sender: Any) {
+        resultFieldMut.insert("(", at: resultFieldMut.startIndex)
+        resultFieldMut.append(") / 100")
+        calculate((Any).self)
+    }
+    
+    @IBAction func ansInsert(_ sender: Any) {
+        if (answer != nil) {
+            calcNum(str: "ans")
+        } else {
+            changeCopyText(str: "No stored answer")
+        }
+    }
+    
+    //____DEGREE RADIANS CONTROL____
+    
+    @IBOutlet var degRad: SYFlatButton!
+    
+    @IBAction func degRadClick(_ sender: Any) {
+        switch ViewController.evaluator.angleMeasurementMode {
+        case .radians:
+            ViewController.evaluator.angleMeasurementMode = .degrees
+            ViewController.defaults.set(1, forKey: "angleMode")
+            degRad.title = "Degrees"
+        case .degrees:
+            ViewController.evaluator.angleMeasurementMode = .radians
+            ViewController.defaults.set(0, forKey: "angleMode")
+            degRad.title = "Radians"
+        }
+    }
     
     
 }
@@ -404,7 +482,7 @@ extension ViewController {
         //1.
         let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
         //2.
-        let identifier = NSStoryboard.SceneIdentifier(rawValue: "ViewController")
+        let identifier = NSStoryboard.SceneIdentifier(rawValue: "standardDark")
         //3.
         guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? ViewController else {
             fatalError("Why cant i find ViewController? - Check Main.storyboard")
@@ -414,7 +492,7 @@ extension ViewController {
     
     static func freshScientificController() -> ViewController {
         let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
-        let identifier = NSStoryboard.SceneIdentifier(rawValue: "scientific")
+        let identifier = NSStoryboard.SceneIdentifier(rawValue: "scientificDark")
         guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? ViewController else {
             fatalError("HELP")
         }
