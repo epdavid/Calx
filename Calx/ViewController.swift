@@ -21,13 +21,17 @@ class ViewController: NSViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         NSApplication.shared.activate(ignoringOtherApps: true) // Makes window active upon loading so calculations can be made straight away
         if (ViewController.defaults.integer(forKey: "angleMode") == 1 && degRad != nil) {
             ViewController.evaluator.angleMeasurementMode = .degrees
             degRad.title = "Degrees"
+            degRad.alphaValue = 0.8
         } else if (degRad != nil) {
             ViewController.evaluator.angleMeasurementMode = .radians
             degRad.title = "Radians"
+            degRad.alphaValue = 1
         }
         
         //Monitor for single keystrokes
@@ -463,10 +467,19 @@ class ViewController: NSViewController {
             ViewController.evaluator.angleMeasurementMode = .degrees
             ViewController.defaults.set(1, forKey: "angleMode")
             degRad.title = "Degrees"
+            NSAnimationContext.runAnimationGroup({_ in
+                NSAnimationContext.current.duration = 1.0
+                degRad.animator().alphaValue = 0.8
+            }, completionHandler: {})
+            
         case .degrees:
             ViewController.evaluator.angleMeasurementMode = .radians
             ViewController.defaults.set(0, forKey: "angleMode")
             degRad.title = "Radians"
+            NSAnimationContext.runAnimationGroup({_ in
+                NSAnimationContext.current.duration = 1.0
+                degRad.animator().alphaValue = 1
+            }, completionHandler: {})
         }
     }
     
