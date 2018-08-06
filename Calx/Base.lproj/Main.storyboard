@@ -103,20 +103,6 @@ Gw
                         <rect key="frame" x="0.0" y="0.0" width="297" height="282"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DKq-x1-paS">
-                                <rect key="frame" x="271" y="264" width="22" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="inline" title="◀" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="7he-Pc-Sce">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="smallSystemBold"/>
-                                    <string key="keyEquivalent" base64-UTF8="YES">
-CA
-</string>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="calcDel:" target="XfG-lQ-9wD" id="HSc-UB-ej1"/>
-                                </connections>
-                            </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wnd-nG-cpL" customClass="SYFlatButton">
                                 <rect key="frame" x="148" y="156" width="75" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -222,31 +208,6 @@ CA
                                     <action selector="calcDot:" target="XfG-lQ-9wD" id="RII-LW-R6g"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eI6-K5-4ca">
-                                <rect key="frame" x="0.0" y="264" width="33" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" title="⌘C" bezelStyle="shadowlessSquare" imagePosition="left" inset="2" id="eUk-R7-Grl">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                    <string key="keyEquivalent">c</string>
-                                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="copyResult:" target="XfG-lQ-9wD" id="3BP-KX-08q"/>
-                                </connections>
-                            </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jH6-bV-KaK">
-                                <rect key="frame" x="29" y="265" width="206" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title=" : Copy Result" id="yfI-og-2bO">
-                                    <font key="font" size="13" name=".LucidaGrandeUI"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <action selector="copyContents:" target="XfG-lQ-9wD" id="kA8-tp-1DW"/>
-                                </connections>
-                            </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TrV-7E-vaF" customClass="SYFlatButton">
                                 <rect key="frame" x="0.0" y="156" width="75" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -591,63 +552,15 @@ CA
                                     <action selector="calc3:" target="XfG-lQ-9wD" id="8AM-bB-f1Y"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="63B-3d-jgV" customClass="SYFlatButton">
-                                <rect key="frame" x="0.0" y="39" width="75" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" title="1" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1uA-rY-DXH">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                    <string key="keyEquivalent">1</string>
-                                </buttonCell>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
-                                        <color key="value" red="0.13333333333333333" green="0.23921568627450981" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundHighlightColor">
-                                        <color key="value" red="0.1333333333" green="0.23921568630000001" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
-                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
-                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
-                                        <color key="value" red="0.18682383623972681" green="0.3360364504012559" blue="0.40568282194923855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
-                                        <color key="value" red="0.17756455169201385" green="0.31938195290621391" blue="0.38557654022335019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="calc1:" target="XfG-lQ-9wD" id="RWy-Po-FWA"/>
-                                </connections>
-                            </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDD-SQ-mcG">
                                 <rect key="frame" x="0.0" y="195" width="297" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="0" drawsBackground="YES" id="WDP-jV-jig">
-                                    <font key="font" metaFont="system" size="56"/>
+                                    <font key="font" metaFont="system" size="50"/>
                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" red="0.17756455169999999" green="0.31938195289999999" blue="0.38557654019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOb-jW-m76">
-                                <rect key="frame" x="241" y="264" width="20" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="inline" title="?" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="Gxt-0p-9Y0">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="smallSystemBold"/>
-                                    <string key="keyEquivalent">/</string>
-                                    <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="xva-xs-VLY" kind="show" id="KZa-7D-tn9"/>
-                                </connections>
-                            </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H9c-xA-8Ou" customClass="SYFlatButton">
                                 <rect key="frame" x="222" y="0.0" width="75" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -823,17 +736,136 @@ CA
                                     <action selector="calcPlus:" target="XfG-lQ-9wD" id="jn5-R3-AeN"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="63B-3d-jgV" customClass="SYFlatButton">
+                                <rect key="frame" x="0.0" y="39" width="75" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" title="1" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1uA-rY-DXH">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent">1</string>
+                                </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                        <color key="value" red="0.13333333333333333" green="0.23921568627450981" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundHighlightColor">
+                                        <color key="value" red="0.1333333333" green="0.23921568630000001" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                        <color key="value" red="0.18682383623972681" green="0.3360364504012559" blue="0.40568282194923855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                        <color key="value" red="0.17756455169201385" green="0.31938195290621391" blue="0.38557654022335019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="calc1:" target="XfG-lQ-9wD" id="RWy-Po-FWA"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w86-w5-Tzm" customClass="SYFlatButton">
+                                <rect key="frame" x="0.0" y="260" width="31" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" title="⌘C " bezelStyle="shadowlessSquare" imagePosition="left" inset="2" id="9dm-u6-rE5">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent">c</string>
+                                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                        <color key="value" red="0.1764705882" green="0.31764705879999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundHighlightColor">
+                                        <color key="value" red="0.1764705882" green="0.31764705879999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                        <color key="value" red="0.17756455169999999" green="0.31938195289999999" blue="0.38557654019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                        <color key="value" red="0.17756455169999999" green="0.31938195289999999" blue="0.38557654019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="copyResult:" target="XfG-lQ-9wD" id="18A-bo-PaU"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jqi-08-TPU">
+                                <rect key="frame" x="30" y="261" width="267" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title=" : Copy Result" drawsBackground="YES" id="hQV-Xe-ptb">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.17756455169999999" green="0.31938195289999999" blue="0.38557654019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4gO-ES-gF5">
+                                <rect key="frame" x="275" y="264" width="22" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="inline" title="◀" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="T0r-uz-ghx">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystemBold"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+CA
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="calcDel:" target="XfG-lQ-9wD" id="cpx-C2-VA0"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eu2-Z9-MOj">
+                                <rect key="frame" x="249" y="265" width="20" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="inline" title="?" bezelStyle="inline" image="buttonCell:rYL-NW-D6m:image" imagePosition="overlaps" alignment="center" borderStyle="border" inset="2" id="rYL-NW-D6m">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystemBold"/>
+                                    <string key="keyEquivalent">?</string>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="xva-xs-VLY" kind="show" id="ZLu-jR-S8g"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kY3-73-0aE">
+                                <rect key="frame" x="176" y="264" width="65" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="inline" title="Scientific" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="GRE-6J-XXB">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystemBold"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="toggleScientific:" target="XfG-lQ-9wD" id="yvW-rw-Sic"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="copied" destination="jH6-bV-KaK" id="lUG-aA-tgS"/>
-                        <outlet property="copyResult" destination="eI6-K5-4ca" id="4Hr-AD-3bt"/>
+                        <outlet property="copied" destination="jqi-08-TPU" id="n0k-Uy-tUV"/>
+                        <outlet property="one" destination="63B-3d-jgV" id="80h-vZ-3Rj"/>
                         <outlet property="resultField" destination="NDD-SQ-mcG" id="0fC-H2-1UJ"/>
+                        <outlet property="three" destination="ZND-ID-pg6" id="e5L-iP-jEc"/>
+                        <outlet property="two" destination="aKO-Xh-PVe" id="jcY-AP-38S"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-191.5" y="605"/>
+            <point key="canvasLocation" x="-193.5" y="608"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="fPG-sN-7eK">
@@ -854,20 +886,128 @@ CA
                 </windowController>
                 <customObject id="cgg-rS-iNq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="287" y="602"/>
+            <point key="canvasLocation" x="343" y="636"/>
         </scene>
-        <!--Help View Controller-->
+        <!--View Controller-->
         <scene sceneID="EDM-Ih-Ils">
             <objects>
-                <viewController id="RJG-ve-CYw" customClass="HelpViewController" customModule="Calx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RJG-ve-CYw" customClass="ViewController" customModule="Calx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="dRh-dY-eCl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="436" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wbp-1Y-UFV">
+                                <rect key="frame" x="18" y="233" width="170" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Some Keyboard Shortcuts:" id="e1T-VA-sdL">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A2T-z0-RDy">
+                                <rect key="frame" x="18" y="54" width="58" height="162"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="H1B-kY-WXK">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">c
+⌘c
+⌘v
+s
+⇧c
+t
+⇧⌘s
+⇧⌘c
+⇧⌘t</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6IB-ht-dpx">
+                                <rect key="frame" x="74" y="54" width="132" height="162"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="3Uy-02-tdZ">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">Clear
+Copy Result
+Paste from Clipboard
+sin
+cos
+tan
+sin⁻¹
+cos⁻¹
+tan⁻¹</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zz3-Xg-a7g">
+                                <rect key="frame" x="164" y="18" width="59" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="atK-fQ-Dir">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="close:" target="RJG-ve-CYw" id="XwV-cb-OlD"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZNm-GI-f0j">
+                                <rect key="frame" x="235" y="233" width="183" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="⌘s - Toggle Calculator Style" id="vwn-u0-YaC">
+                                    <font key="font" size="13" name=".LucidaGrandeUI"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AYm-jZ-WlG">
+                                <rect key="frame" x="317" y="54" width="108" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="Sfb-lK-gn4">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">e
+EE
+π
+xʸ
+√
+x²
+ans
+ln
+log₁₀
+x⁻¹</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CjO-iU-3Rt">
+                                <rect key="frame" x="255" y="54" width="58" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="jGm-5H-3sA">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">e
+E
+p
+^
+q
+⌘2
+a
+l
+L
+i</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
                     </view>
                 </viewController>
                 <customObject id="c5t-dB-BAW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="994" y="577"/>
+            <point key="canvasLocation" x="943" y="636"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="74j-Hi-Klc">
@@ -878,10 +1018,10 @@ CA
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfj-ER-uMs">
-                                <rect key="frame" x="222" y="187" width="299" height="67"/>
+                                <rect key="frame" x="222" y="195" width="299" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="0" drawsBackground="YES" id="HgZ-IB-Laj">
-                                    <font key="font" metaFont="system" size="56"/>
+                                    <font key="font" metaFont="system" size="50"/>
                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" red="0.17756455169999999" green="0.31938195289999999" blue="0.38557654019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textFieldCell>
@@ -1510,30 +1650,50 @@ CA
                                     <action selector="calcCloseP:" target="Vix-iY-L4T" id="j9z-8g-1f0"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4KI-qn-Ud0">
-                                <rect key="frame" x="222" y="253" width="33" height="18"/>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4KI-qn-Ud0" customClass="SYFlatButton">
+                                <rect key="frame" x="222" y="253" width="31" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" title="⌘C" bezelStyle="shadowlessSquare" imagePosition="left" inset="2" id="kyk-Ac-e1c">
+                                <buttonCell key="cell" type="square" title="⌘C " bezelStyle="shadowlessSquare" imagePosition="left" inset="2" id="kyk-Ac-e1c">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" size="13" name=".LucidaGrandeUI"/>
                                     <string key="keyEquivalent">c</string>
                                     <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                 </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                        <color key="value" red="0.1764705882352941" green="0.31764705882352939" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundHighlightColor">
+                                        <color key="value" red="0.1764705882352941" green="0.31764705882352939" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                        <color key="value" red="0.17756455169999999" green="0.31938195289999999" blue="0.38557654019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                        <color key="value" red="0.17756455169999999" green="0.31938195289999999" blue="0.38557654019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="copyResult:" target="Vix-iY-L4T" id="O9K-vu-TgU"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wo8-bG-aNN">
-                                <rect key="frame" x="251" y="254" width="208" height="17"/>
+                                <rect key="frame" x="252" y="254" width="267" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title=" : Copy Result" id="NiM-UK-1bt">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title=" : Copy Result" drawsBackground="YES" id="NiM-UK-1bt">
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.17756455169999999" green="0.31938195289999999" blue="0.38557654019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textFieldCell>
-                                <connections>
-                                    <action selector="copyContents:" target="XfG-lQ-9wD" id="lQx-69-OAW"/>
-                                </connections>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SfG-PW-Brr" customClass="SYFlatButton">
                                 <rect key="frame" x="0.0" y="156" width="75" height="40"/>
@@ -1927,6 +2087,7 @@ CA
                                 <buttonCell key="cell" type="square" title="x⁻¹" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="B78-Ek-I2T">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent">i</string>
                                 </buttonCell>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
@@ -2169,7 +2330,7 @@ CA
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udc-0z-lJ9">
-                                <rect key="frame" x="493" y="254" width="22" height="17"/>
+                                <rect key="frame" x="497" y="257" width="22" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="inline" title="◀" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="blG-Fz-pPv">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -2183,9 +2344,9 @@ CA
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="08r-hq-HND">
-                                <rect key="frame" x="465" y="254" width="20" height="17"/>
+                                <rect key="frame" x="471" y="258" width="20" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="inline" title="?" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="9RE-5m-iIB">
+                                <buttonCell key="cell" type="inline" title="?" bezelStyle="inline" image="buttonCell:9RE-5m-iIB:image" imagePosition="overlaps" alignment="center" borderStyle="border" inset="2" id="9RE-5m-iIB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystemBold"/>
                                     <string key="keyEquivalent">?</string>
@@ -2263,12 +2424,39 @@ CA
                                     <action selector="degRadClick:" target="Vix-iY-L4T" id="taQ-OU-cvp"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vgh-UC-27F">
+                                <rect key="frame" x="74" y="234" width="149" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ans:" drawsBackground="YES" id="ZJD-WA-hL5">
+                                    <font key="font" metaFont="system" size="18"/>
+                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.1764705882352941" green="0.31764705882352939" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="answerField:" target="Vix-iY-L4T" id="QbP-B9-064"/>
+                                </connections>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fxb-Zv-l6j">
+                                <rect key="frame" x="412" y="256" width="51" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="inline" title="Simple" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="GcK-aV-tLb">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystemBold"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="toggleScientific:" target="Vix-iY-L4T" id="3Xd-xd-eXi"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="answerField" destination="Vgh-UC-27F" id="qHa-n1-vMT"/>
                         <outlet property="copied" destination="wo8-bG-aNN" id="CU6-QF-xfb"/>
                         <outlet property="degRad" destination="fqI-aH-v1W" id="GQT-30-dmr"/>
+                        <outlet property="one" destination="38K-zg-XLV" id="Xxe-5c-57W"/>
                         <outlet property="resultField" destination="sfj-ER-uMs" id="z86-O5-sIv"/>
+                        <outlet property="three" destination="fRH-po-JW6" id="PWM-MO-VJy"/>
+                        <outlet property="two" destination="sxc-Z1-X2h" id="IhQ-5V-ECZ"/>
                     </connections>
                 </viewController>
                 <customObject id="SxV-vV-Yx6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -2278,8 +2466,268 @@ CA
     </scenes>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="buttonCell:9RE-5m-iIB:image" width="1" height="1">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGVVZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcI
+ExQZHh8jJCsuMTtDR0tPUlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdz
+Vk5TUmVwc1dOU0NvbG9ygAKAERIgwwAAgAOAC1Z7MSwgMX3SFQoWGFpOUy5vYmplY3RzoReABIAK0hUK
+Gh2iGxyABYAGgAkQANIgCiEiXxAUTlNUSUZGUmVwcmVzZW50YXRpb26AB4AITxEIxE1NACoAAAAKAAAA
+EAEAAAMAAAABAAEAAAEBAAMAAAABAAEAAAECAAMAAAACAAgACAEDAAMAAAABAAEAAAEGAAMAAAABAAEA
+AAEKAAMAAAABAAEAAAERAAQAAAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAIAAAEWAAMAAAABAAEA
+AAEXAAQAAAABAAAAAgEcAAMAAAABAAEAAAEoAAMAAAABAAIAAAFSAAMAAAABAAEAAAFTAAMAAAACAAEA
+AYdzAAcAAAf0AAAA0AAAAAAAAAf0YXBwbAIgAABtbnRyR1JBWVhZWiAH0AACAA4ADAAAAABhY3NwQVBQ
+TAAAAABub25lAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGwAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVkZXNjAAAAwAAAAG9kc2NtAAABMAAABmZjcHJ0AAAH
+mAAAADh3dHB0AAAH0AAAABRrVFJDAAAH5AAAAA5kZXNjAAAAAAAAABVHZW5lcmljIEdyYXkgUHJvZmls
+ZQAAAAAAAAAAAAAAFUdlbmVyaWMgR3JheSBQcm9maWxlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAbWx1YwAAAAAAAAAfAAAADHNrU0sAAAAqAAABhGVuVVMAAAAoAAAB
+rmNhRVMAAAAsAAAB1nZpVk4AAAAsAAACAnB0QlIAAAAqAAACLnVrVUEAAAAsAAACWGZyRlUAAAAqAAAC
+hGh1SFUAAAAuAAACrnpoVFcAAAAQAAAC3G5iTk8AAAAsAAAC7GtvS1IAAAAYAAADGGNzQ1oAAAAkAAAD
+MGhlSUwAAAAgAAADVHJvUk8AAAAkAAADdGRlREUAAAA6AAADmGl0SVQAAAAuAAAD0nN2U0UAAAAuAAAE
+AHpoQ04AAAAQAAAELmphSlAAAAAWAAAEPmVsR1IAAAAkAAAEVHB0UE8AAAA4AAAEeG5sTkwAAAAqAAAE
+sGVzRVMAAAAoAAAE2nRoVEgAAAAkAAAFAnRyVFIAAAAiAAAFJmZpRkkAAAAsAAAFSGhySFIAAAA6AAAF
+dHBsUEwAAAA2AAAFrnJ1UlUAAAAmAAAF5GFyRUcAAAAoAAAGCmRhREsAAAA0AAAGMgBWAWEAZQBvAGIA
+ZQBjAG4A/QAgAHMAaQB2AP0AIABwAHIAbwBmAGkAbABHAGUAbgBlAHIAaQBjACAARwByAGEAeQAgAFAA
+cgBvAGYAaQBsAGUAUABlAHIAZgBpAGwAIABkAGUAIABnAHIAaQBzACAAZwBlAG4A6AByAGkAYwBDHqUA
+dQAgAGgA7ABuAGgAIABNAOAAdQAgAHgA4QBtACAAQwBoAHUAbgBnAFAAZQByAGYAaQBsACAAQwBpAG4A
+egBhACAARwBlAG4A6QByAGkAYwBvBBcEMAQzBDAEOwRMBD0EOAQ5ACAEPwRABD4ERAQwBDkEOwAgAEcA
+cgBhAHkAUAByAG8AZgBpAGwAIABnAOkAbgDpAHIAaQBxAHUAZQAgAGcAcgBpAHMAwQBsAHQAYQBsAOEA
+bgBvAHMAIABzAHoA/AByAGsAZQAgAHAAcgBvAGYAaQBskBp1KHBwlo6Ccl9pY8+P8ABHAGUAbgBlAHIA
+aQBzAGsAIABnAHIA5QB0AG8AbgBlAHAAcgBvAGYAaQBsx3y8GAAgAEcAcgBhAHkAINUEuFzTDMd8AE8A
+YgBlAGMAbgD9ACABYQBlAGQA/QAgAHAAcgBvAGYAaQBsBeQF6AXVBeQF2QXcACAARwByAGEAeQAgBdsF
+3AXcBdkAUAByAG8AZgBpAGwAIABnAHIAaQAgAGcAZQBuAGUAcgBpAGMAQQBsAGwAZwBlAG0AZQBpAG4A
+ZQBzACAARwByAGEAdQBzAHQAdQBmAGUAbgAtAFAAcgBvAGYAaQBsAFAAcgBvAGYAaQBsAG8AIABnAHIA
+aQBnAGkAbwAgAGcAZQBuAGUAcgBpAGMAbwBHAGUAbgBlAHIAaQBzAGsAIABnAHIA5QBzAGsAYQBsAGUA
+cAByAG8AZgBpAGxmbpAacHBepmPPj/Blh072TgCCLDCwMOwwpDDXMO0w1TChMKQw6wOTA7UDvQO5A7oD
+zAAgA8ADwQO/A8YDrwO7ACADswO6A8EDuQBQAGUAcgBmAGkAbAAgAGcAZQBuAOkAcgBpAGMAbwAgAGQA
+ZQAgAGMAaQBuAHoAZQBuAHQAbwBzAEEAbABnAGUAbQBlAGUAbgAgAGcAcgBpAGoAcwBwAHIAbwBmAGkA
+ZQBsAFAAZQByAGYAaQBsACAAZwByAGkAcwAgAGcAZQBuAOkAcgBpAGMAbw5CDhsOIw5EDh8OJQ5MDioO
+NQ5ADhcOMg4XDjEOSA4nDkQOGwBHAGUAbgBlAGwAIABHAHIAaQAgAFAAcgBvAGYAaQBsAGkAWQBsAGUA
+aQBuAGUAbgAgAGgAYQByAG0AYQBhAHAAcgBvAGYAaQBpAGwAaQBHAGUAbgBlAHIAaQENAGsAaQAgAHAA
+cgBvAGYAaQBsACAAcwBpAHYAaQBoACAAdABvAG4AbwB2AGEAVQBuAGkAdwBlAHIAcwBhAGwAbgB5ACAA
+cAByAG8AZgBpAGwAIABzAHoAYQByAG8BWwBjAGkEHgQxBEkEOAQ5ACAEQQQ1BEAESwQ5ACAEPwRABD4E
+RAQ4BDsETAZFBkQGQQAgBioGOQYxBkoGQQAgAEcAcgBhAHkAIAYnBkQGOQYnBkUARwBlAG4AZQByAGUA
+bAAgAGcAcgDlAHQAbwBuAGUAYgBlAHMAawByAGkAdgBlAGwAcwBlAAB0ZXh0AAAAAENvcHlyaWdodCAy
+MDA3IEFwcGxlIEluYy4sIGFsbCByaWdodHMgcmVzZXJ2ZWQuAFhZWiAAAAAAAADzUQABAAAAARbMY3Vy
+dgAAAAAAAAABAc0AANIlJicoWiRjbGFzc25hbWVYJGNsYXNzZXNfEBBOU0JpdG1hcEltYWdlUmVwoycp
+KlpOU0ltYWdlUmVwWE5TT2JqZWN00iUmLC1XTlNBcnJheaIsKtIlJi8wXk5TTXV0YWJsZUFycmF5oy8s
+KtUyMzQ1CjY3ODk6V05TV2hpdGVcTlNDb21wb25lbnRzXE5TQ29sb3JTcGFjZV8QEk5TQ3VzdG9tQ29s
+b3JTcGFjZUQwIDAAQzAgMBADgAyAENQ8PT4KP0BBQlROU0lEVU5TSUNDV05TTW9kZWwQCYANEACAD9JE
+CkVGV05TLmRhdGFPERFoAAARaGFwcGwCAAAAbW50ckdSQVlYWVogB9wACAAXAA8ALgAPYWNzcEFQUEwA
+AAAAbm9uZQAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFZGVzYwAAAMAAAAB5ZHNjbQAAATwAAAfoY3BydAAACSQA
+AAAjd3RwdAAACUgAAAAUa1RSQwAACVwAAAgMZGVzYwAAAAAAAAAfR2VuZXJpYyBHcmF5IEdhbW1hIDIu
+MiBQcm9maWxlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG1sdWMAAAAAAAAAHwAAAAxza1NLAAAALgAAAYRk
+YURLAAAAOAAAAbJjYUVTAAAAOAAAAep2aVZOAAAAQAAAAiJwdEJSAAAASgAAAmJ1a1VBAAAALAAAAqxm
+ckZVAAAAPgAAAthodUhVAAAANAAAAxZ6aFRXAAAAHgAAA0puYk5PAAAAOgAAA2hjc0NaAAAAKAAAA6Jo
+ZUlMAAAAJAAAA8ppdElUAAAATgAAA+5yb1JPAAAAKgAABDxkZURFAAAATgAABGZrb0tSAAAAIgAABLRz
+dlNFAAAAOAAAAbJ6aENOAAAAHgAABNZqYUpQAAAAJgAABPRlbEdSAAAAKgAABRpwdFBPAAAAUgAABURu
+bE5MAAAAQAAABZZlc0VTAAAATAAABdZ0aFRIAAAAMgAABiJ0clRSAAAAJAAABlRmaUZJAAAARgAABnho
+ckhSAAAAPgAABr5wbFBMAAAASgAABvxydVJVAAAAOgAAB0ZlblVTAAAAPAAAB4BhckVHAAAALAAAB7wA
+VgFhAGUAbwBiAGUAYwBuAOEAIABzAGkAdgDhACAAZwBhAG0AYQAgADIALAAyAEcAZQBuAGUAcgBpAHMA
+awAgAGcAcgDlACAAMgAsADIAIABnAGEAbQBtAGEAcAByAG8AZgBpAGwARwBhAG0AbQBhACAAZABlACAA
+ZwByAGkAcwBvAHMAIABnAGUAbgDoAHIAaQBjAGEAIAAyAC4AMgBDHqUAdQAgAGgA7ABuAGgAIABNAOAA
+dQAgAHgA4QBtACAAQwBoAHUAbgBnACAARwBhAG0AbQBhACAAMgAuADIAUABlAHIAZgBpAGwAIABHAGUA
+bgDpAHIAaQBjAG8AIABkAGEAIABHAGEAbQBhACAAZABlACAAQwBpAG4AegBhAHMAIAAyACwAMgQXBDAE
+MwQwBDsETAQ9BDAAIABHAHIAYQB5AC0EMwQwBDwEMAAgADIALgAyAFAAcgBvAGYAaQBsACAAZwDpAG4A
+6QByAGkAcQB1AGUAIABnAHIAaQBzACAAZwBhAG0AbQBhACAAMgAsADIAwQBsAHQAYQBsAOEAbgBvAHMA
+IABzAHoA/AByAGsAZQAgAGcAYQBtAG0AYQAgADIALgAykBp1KHBwlo5RSV6mACAAMgAuADIAIIJyX2lj
+z4/wAEcAZQBuAGUAcgBpAHMAawAgAGcAcgDlACAAZwBhAG0AbQBhACAAMgAsADIALQBwAHIAbwBmAGkA
+bABPAGIAZQBjAG4A4QAgAWEAZQBkAOEAIABnAGEAbQBhACAAMgAuADIF0gXQBd4F1AAgBdAF5AXVBegA
+IAXbBdwF3AXZACAAMgAuADIAUAByAG8AZgBpAGwAbwAgAGcAcgBpAGcAaQBvACAAZwBlAG4AZQByAGkA
+YwBvACAAZABlAGwAbABhACAAZwBhAG0AbQBhACAAMgAsADIARwBhAG0AYQAgAGcAcgBpACAAZwBlAG4A
+ZQByAGkAYwEDACAAMgAsADIAQQBsAGwAZwBlAG0AZQBpAG4AZQBzACAARwByAGEAdQBzAHQAdQBmAGUA
+bgAtAFAAcgBvAGYAaQBsACAARwBhAG0AbQBhACAAMgAsADLHfLwYACDWjMDJACCsELnIACAAMgAuADIA
+INUEuFzTDMd8Zm6QGnBwXqZ8+2VwACAAMgAuADIAIGPPj/Blh072TgCCLDCwMOwwpDCsMPMw3gAgADIA
+LgAyACAw1zDtMNUwoTCkMOsDkwO1A70DuQO6A8wAIAOTA7oDwQO5ACADkwOsA7wDvAOxACAAMgAuADIA
+UABlAHIAZgBpAGwAIABnAGUAbgDpAHIAaQBjAG8AIABkAGUAIABjAGkAbgB6AGUAbgB0AG8AcwAgAGQA
+YQAgAEcAYQBtAG0AYQAgADIALAAyAEEAbABnAGUAbQBlAGUAbgAgAGcAcgBpAGoAcwAgAGcAYQBtAG0A
+YQAgADIALAAyAC0AcAByAG8AZgBpAGUAbABQAGUAcgBmAGkAbAAgAGcAZQBuAOkAcgBpAGMAbwAgAGQA
+ZQAgAGcAYQBtAG0AYQAgAGQAZQAgAGcAcgBpAHMAZQBzACAAMgAsADIOIw4xDgcOKg41DkEOAQ4hDiEO
+Mg5ADgEOIw4iDkwOFw4xDkgOJw5EDhsAIAAyAC4AMgBHAGUAbgBlAGwAIABHAHIAaQAgAEcAYQBtAGEA
+IAAyACwAMgBZAGwAZQBpAG4AZQBuACAAaABhAHIAbQBhAGEAbgAgAGcAYQBtAG0AYQAgADIALAAyACAA
+LQBwAHIAbwBmAGkAaQBsAGkARwBlAG4AZQByAGkBDQBrAGkAIABHAHIAYQB5ACAARwBhAG0AbQBhACAA
+MgAuADIAIABwAHIAbwBmAGkAbABVAG4AaQB3AGUAcgBzAGEAbABuAHkAIABwAHIAbwBmAGkAbAAgAHMA
+egBhAHIAbwFbAGMAaQAgAGcAYQBtAG0AYQAgADIALAAyBB4EMQRJBDAETwAgBEEENQRABDAETwAgBDME
+MAQ8BDwEMAAgADIALAAyAC0EPwRABD4ERAQ4BDsETABHAGUAbgBlAHIAaQBjACAARwByAGEAeQAgAEcA
+YQBtAG0AYQAgADIALgAyACAAUAByAG8AZgBpAGwAZQY6BicGRQYnACAAMgAuADIAIAZEBkgGRgAgBjEG
+RQYnBi8GSgAgBjkGJwZFdGV4dAAAAABDb3B5cmlnaHQgQXBwbGUgSW5jLiwgMjAxMgAAWFlaIAAAAAAA
+APNRAAEAAAABFsxjdXJ2AAAAAAAABAAAAAAFAAoADwAUABkAHgAjACgALQAyADcAOwBAAEUASgBPAFQA
+WQBeAGMAaABtAHIAdwB8AIEAhgCLAJAAlQCaAJ8ApACpAK4AsgC3ALwAwQDGAMsA0ADVANsA4ADlAOsA
+8AD2APsBAQEHAQ0BEwEZAR8BJQErATIBOAE+AUUBTAFSAVkBYAFnAW4BdQF8AYMBiwGSAZoBoQGpAbEB
+uQHBAckB0QHZAeEB6QHyAfoCAwIMAhQCHQImAi8COAJBAksCVAJdAmcCcQJ6AoQCjgKYAqICrAK2AsEC
+ywLVAuAC6wL1AwADCwMWAyEDLQM4A0MDTwNaA2YDcgN+A4oDlgOiA64DugPHA9MD4APsA/kEBgQTBCAE
+LQQ7BEgEVQRjBHEEfgSMBJoEqAS2BMQE0wThBPAE/gUNBRwFKwU6BUkFWAVnBXcFhgWWBaYFtQXFBdUF
+5QX2BgYGFgYnBjcGSAZZBmoGewaMBp0GrwbABtEG4wb1BwcHGQcrBz0HTwdhB3QHhgeZB6wHvwfSB+UH
++AgLCB8IMghGCFoIbgiCCJYIqgi+CNII5wj7CRAJJQk6CU8JZAl5CY8JpAm6Cc8J5Qn7ChEKJwo9ClQK
+agqBCpgKrgrFCtwK8wsLCyILOQtRC2kLgAuYC7ALyAvhC/kMEgwqDEMMXAx1DI4MpwzADNkM8w0NDSYN
+QA1aDXQNjg2pDcMN3g34DhMOLg5JDmQOfw6bDrYO0g7uDwkPJQ9BD14Peg+WD7MPzw/sEAkQJhBDEGEQ
+fhCbELkQ1xD1ERMRMRFPEW0RjBGqEckR6BIHEiYSRRJkEoQSoxLDEuMTAxMjE0MTYxODE6QTxRPlFAYU
+JxRJFGoUixStFM4U8BUSFTQVVhV4FZsVvRXgFgMWJhZJFmwWjxayFtYW+hcdF0EXZReJF64X0hf3GBsY
+QBhlGIoYrxjVGPoZIBlFGWsZkRm3Gd0aBBoqGlEadxqeGsUa7BsUGzsbYxuKG7Ib2hwCHCocUhx7HKMc
+zBz1HR4dRx1wHZkdwx3sHhYeQB5qHpQevh7pHxMfPh9pH5Qfvx/qIBUgQSBsIJggxCDwIRwhSCF1IaEh
+ziH7IiciVSKCIq8i3SMKIzgjZiOUI8Ij8CQfJE0kfCSrJNolCSU4JWgllyXHJfcmJyZXJocmtyboJxgn
+SSd6J6sn3CgNKD8ocSiiKNQpBik4KWspnSnQKgIqNSpoKpsqzysCKzYraSudK9EsBSw5LG4soizXLQwt
+QS12Last4S4WLkwugi63Lu4vJC9aL5Evxy/+MDUwbDCkMNsxEjFKMYIxujHyMioyYzKbMtQzDTNGM38z
+uDPxNCs0ZTSeNNg1EzVNNYc1wjX9Njc2cjauNuk3JDdgN5w31zgUOFA4jDjIOQU5Qjl/Obw5+To2OnQ6
+sjrvOy07azuqO+g8JzxlPKQ84z0iPWE9oT3gPiA+YD6gPuA/IT9hP6I/4kAjQGRApkDnQSlBakGsQe5C
+MEJyQrVC90M6Q31DwEQDREdEikTORRJFVUWaRd5GIkZnRqtG8Ec1R3tHwEgFSEtIkUjXSR1JY0mpSfBK
+N0p9SsRLDEtTS5pL4kwqTHJMuk0CTUpNk03cTiVObk63TwBPSU+TT91QJ1BxULtRBlFQUZtR5lIxUnxS
+x1MTU19TqlP2VEJUj1TbVShVdVXCVg9WXFapVvdXRFeSV+BYL1h9WMtZGllpWbhaB1pWWqZa9VtFW5Vb
+5Vw1XIZc1l0nXXhdyV4aXmxevV8PX2Ffs2AFYFdgqmD8YU9homH1YklinGLwY0Njl2PrZEBklGTpZT1l
+kmXnZj1mkmboZz1nk2fpaD9olmjsaUNpmmnxakhqn2r3a09rp2v/bFdsr20IbWBtuW4SbmtuxG8eb3hv
+0XArcIZw4HE6cZVx8HJLcqZzAXNdc7h0FHRwdMx1KHWFdeF2Pnabdvh3VnezeBF4bnjMeSp5iXnnekZ6
+pXsEe2N7wnwhfIF84X1BfaF+AX5ifsJ/I3+Ef+WAR4CogQqBa4HNgjCCkoL0g1eDuoQdhICE44VHhauG
+DoZyhteHO4efiASIaYjOiTOJmYn+imSKyoswi5aL/IxjjMqNMY2Yjf+OZo7OjzaPnpAGkG6Q1pE/kaiS
+EZJ6kuOTTZO2lCCUipT0lV+VyZY0lp+XCpd1l+CYTJi4mSSZkJn8mmia1ZtCm6+cHJyJnPedZJ3SnkCe
+rp8dn4uf+qBpoNihR6G2oiailqMGo3aj5qRWpMelOKWpphqmi6b9p26n4KhSqMSpN6mpqhyqj6sCq3Wr
+6axcrNCtRK24ri2uoa8Wr4uwALB1sOqxYLHWskuywrM4s660JbSctRO1irYBtnm28Ldot+C4WbjRuUq5
+wro7urW7LrunvCG8m70VvY++Cr6Evv+/er/1wHDA7MFnwePCX8Lbw1jD1MRRxM7FS8XIxkbGw8dBx7/I
+Pci8yTrJuco4yrfLNsu2zDXMtc01zbXONs62zzfPuNA50LrRPNG+0j/SwdNE08bUSdTL1U7V0dZV1tjX
+XNfg2GTY6Nls2fHadtr724DcBdyK3RDdlt4c3qLfKd+v4DbgveFE4cziU+Lb42Pj6+Rz5PzlhOYN5pbn
+H+ep6DLovOlG6dDqW+rl63Dr++yG7RHtnO4o7rTvQO/M8Fjw5fFy8f/yjPMZ86f0NPTC9VD13vZt9vv3
+ivgZ+Kj5OPnH+lf65/t3/Af8mP0p/br+S/7c/23//4AO0iUmSEldTlNNdXRhYmxlRGF0YaNISipWTlNE
+YXRh0iUmTE1cTlNDb2xvclNwYWNlok4qXE5TQ29sb3JTcGFjZdIlJlBRV05TQ29sb3KiUCrSJSZTVFdO
+U0ltYWdlolMqXxAPTlNLZXllZEFyY2hpdmVy0VdYVHJvb3SAAQAIABEAGgAjAC0AMgA3AEwAUgBdAGQA
+awB4AH8AhwCJAIsAkACSAJQAmwCgAKsArQCvALEAtgC5ALsAvQC/AMEAxgDdAN8A4QmpCa4JuQnCCdUJ
+2QnkCe0J8gn6Cf0KAgoRChUKIAooCjUKQgpXClwKYApiCmQKZgpvCnQKegqCCoQKhgqICooKjwqXHAMc
+BRwKHBgcHBwjHCgcNRw4HEUcShxSHFUcWhxiHGUcdxx6HH8AAAAAAAACAQAAAAAAAABZAAAAAAAAAAAA
+AAAAAAAcgQ
+</mutableData>
+        </image>
+        <image name="buttonCell:rYL-NW-D6m:image" width="1" height="1">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGVVZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcI
+ExQZHh8jJCsuMTtDR0tPUlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdz
+Vk5TUmVwc1dOU0NvbG9ygAKAERIgwwAAgAOAC1Z7MSwgMX3SFQoWGFpOUy5vYmplY3RzoReABIAK0hUK
+Gh2iGxyABYAGgAkQANIgCiEiXxAUTlNUSUZGUmVwcmVzZW50YXRpb26AB4AITxEIxE1NACoAAAAKAAAA
+EAEAAAMAAAABAAEAAAEBAAMAAAABAAEAAAECAAMAAAACAAgACAEDAAMAAAABAAEAAAEGAAMAAAABAAEA
+AAEKAAMAAAABAAEAAAERAAQAAAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAIAAAEWAAMAAAABAAEA
+AAEXAAQAAAABAAAAAgEcAAMAAAABAAEAAAEoAAMAAAABAAIAAAFSAAMAAAABAAEAAAFTAAMAAAACAAEA
+AYdzAAcAAAf0AAAA0AAAAAAAAAf0YXBwbAIgAABtbnRyR1JBWVhZWiAH0AACAA4ADAAAAABhY3NwQVBQ
+TAAAAABub25lAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGwAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVkZXNjAAAAwAAAAG9kc2NtAAABMAAABmZjcHJ0AAAH
+mAAAADh3dHB0AAAH0AAAABRrVFJDAAAH5AAAAA5kZXNjAAAAAAAAABVHZW5lcmljIEdyYXkgUHJvZmls
+ZQAAAAAAAAAAAAAAFUdlbmVyaWMgR3JheSBQcm9maWxlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAbWx1YwAAAAAAAAAfAAAADHNrU0sAAAAqAAABhGVuVVMAAAAoAAAB
+rmNhRVMAAAAsAAAB1nZpVk4AAAAsAAACAnB0QlIAAAAqAAACLnVrVUEAAAAsAAACWGZyRlUAAAAqAAAC
+hGh1SFUAAAAuAAACrnpoVFcAAAAQAAAC3G5iTk8AAAAsAAAC7GtvS1IAAAAYAAADGGNzQ1oAAAAkAAAD
+MGhlSUwAAAAgAAADVHJvUk8AAAAkAAADdGRlREUAAAA6AAADmGl0SVQAAAAuAAAD0nN2U0UAAAAuAAAE
+AHpoQ04AAAAQAAAELmphSlAAAAAWAAAEPmVsR1IAAAAkAAAEVHB0UE8AAAA4AAAEeG5sTkwAAAAqAAAE
+sGVzRVMAAAAoAAAE2nRoVEgAAAAkAAAFAnRyVFIAAAAiAAAFJmZpRkkAAAAsAAAFSGhySFIAAAA6AAAF
+dHBsUEwAAAA2AAAFrnJ1UlUAAAAmAAAF5GFyRUcAAAAoAAAGCmRhREsAAAA0AAAGMgBWAWEAZQBvAGIA
+ZQBjAG4A/QAgAHMAaQB2AP0AIABwAHIAbwBmAGkAbABHAGUAbgBlAHIAaQBjACAARwByAGEAeQAgAFAA
+cgBvAGYAaQBsAGUAUABlAHIAZgBpAGwAIABkAGUAIABnAHIAaQBzACAAZwBlAG4A6AByAGkAYwBDHqUA
+dQAgAGgA7ABuAGgAIABNAOAAdQAgAHgA4QBtACAAQwBoAHUAbgBnAFAAZQByAGYAaQBsACAAQwBpAG4A
+egBhACAARwBlAG4A6QByAGkAYwBvBBcEMAQzBDAEOwRMBD0EOAQ5ACAEPwRABD4ERAQwBDkEOwAgAEcA
+cgBhAHkAUAByAG8AZgBpAGwAIABnAOkAbgDpAHIAaQBxAHUAZQAgAGcAcgBpAHMAwQBsAHQAYQBsAOEA
+bgBvAHMAIABzAHoA/AByAGsAZQAgAHAAcgBvAGYAaQBskBp1KHBwlo6Ccl9pY8+P8ABHAGUAbgBlAHIA
+aQBzAGsAIABnAHIA5QB0AG8AbgBlAHAAcgBvAGYAaQBsx3y8GAAgAEcAcgBhAHkAINUEuFzTDMd8AE8A
+YgBlAGMAbgD9ACABYQBlAGQA/QAgAHAAcgBvAGYAaQBsBeQF6AXVBeQF2QXcACAARwByAGEAeQAgBdsF
+3AXcBdkAUAByAG8AZgBpAGwAIABnAHIAaQAgAGcAZQBuAGUAcgBpAGMAQQBsAGwAZwBlAG0AZQBpAG4A
+ZQBzACAARwByAGEAdQBzAHQAdQBmAGUAbgAtAFAAcgBvAGYAaQBsAFAAcgBvAGYAaQBsAG8AIABnAHIA
+aQBnAGkAbwAgAGcAZQBuAGUAcgBpAGMAbwBHAGUAbgBlAHIAaQBzAGsAIABnAHIA5QBzAGsAYQBsAGUA
+cAByAG8AZgBpAGxmbpAacHBepmPPj/Blh072TgCCLDCwMOwwpDDXMO0w1TChMKQw6wOTA7UDvQO5A7oD
+zAAgA8ADwQO/A8YDrwO7ACADswO6A8EDuQBQAGUAcgBmAGkAbAAgAGcAZQBuAOkAcgBpAGMAbwAgAGQA
+ZQAgAGMAaQBuAHoAZQBuAHQAbwBzAEEAbABnAGUAbQBlAGUAbgAgAGcAcgBpAGoAcwBwAHIAbwBmAGkA
+ZQBsAFAAZQByAGYAaQBsACAAZwByAGkAcwAgAGcAZQBuAOkAcgBpAGMAbw5CDhsOIw5EDh8OJQ5MDioO
+NQ5ADhcOMg4XDjEOSA4nDkQOGwBHAGUAbgBlAGwAIABHAHIAaQAgAFAAcgBvAGYAaQBsAGkAWQBsAGUA
+aQBuAGUAbgAgAGgAYQByAG0AYQBhAHAAcgBvAGYAaQBpAGwAaQBHAGUAbgBlAHIAaQENAGsAaQAgAHAA
+cgBvAGYAaQBsACAAcwBpAHYAaQBoACAAdABvAG4AbwB2AGEAVQBuAGkAdwBlAHIAcwBhAGwAbgB5ACAA
+cAByAG8AZgBpAGwAIABzAHoAYQByAG8BWwBjAGkEHgQxBEkEOAQ5ACAEQQQ1BEAESwQ5ACAEPwRABD4E
+RAQ4BDsETAZFBkQGQQAgBioGOQYxBkoGQQAgAEcAcgBhAHkAIAYnBkQGOQYnBkUARwBlAG4AZQByAGUA
+bAAgAGcAcgDlAHQAbwBuAGUAYgBlAHMAawByAGkAdgBlAGwAcwBlAAB0ZXh0AAAAAENvcHlyaWdodCAy
+MDA3IEFwcGxlIEluYy4sIGFsbCByaWdodHMgcmVzZXJ2ZWQuAFhZWiAAAAAAAADzUQABAAAAARbMY3Vy
+dgAAAAAAAAABAc0AANIlJicoWiRjbGFzc25hbWVYJGNsYXNzZXNfEBBOU0JpdG1hcEltYWdlUmVwoycp
+KlpOU0ltYWdlUmVwWE5TT2JqZWN00iUmLC1XTlNBcnJheaIsKtIlJi8wXk5TTXV0YWJsZUFycmF5oy8s
+KtUyMzQ1CjY3ODk6V05TV2hpdGVcTlNDb21wb25lbnRzXE5TQ29sb3JTcGFjZV8QEk5TQ3VzdG9tQ29s
+b3JTcGFjZUQwIDAAQzAgMBADgAyAENQ8PT4KP0BBQlROU0lEVU5TSUNDV05TTW9kZWwQCYANEACAD9JE
+CkVGV05TLmRhdGFPERFoAAARaGFwcGwCAAAAbW50ckdSQVlYWVogB9wACAAXAA8ALgAPYWNzcEFQUEwA
+AAAAbm9uZQAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFZGVzYwAAAMAAAAB5ZHNjbQAAATwAAAfoY3BydAAACSQA
+AAAjd3RwdAAACUgAAAAUa1RSQwAACVwAAAgMZGVzYwAAAAAAAAAfR2VuZXJpYyBHcmF5IEdhbW1hIDIu
+MiBQcm9maWxlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG1sdWMAAAAAAAAAHwAAAAxza1NLAAAALgAAAYRk
+YURLAAAAOAAAAbJjYUVTAAAAOAAAAep2aVZOAAAAQAAAAiJwdEJSAAAASgAAAmJ1a1VBAAAALAAAAqxm
+ckZVAAAAPgAAAthodUhVAAAANAAAAxZ6aFRXAAAAHgAAA0puYk5PAAAAOgAAA2hjc0NaAAAAKAAAA6Jo
+ZUlMAAAAJAAAA8ppdElUAAAATgAAA+5yb1JPAAAAKgAABDxkZURFAAAATgAABGZrb0tSAAAAIgAABLRz
+dlNFAAAAOAAAAbJ6aENOAAAAHgAABNZqYUpQAAAAJgAABPRlbEdSAAAAKgAABRpwdFBPAAAAUgAABURu
+bE5MAAAAQAAABZZlc0VTAAAATAAABdZ0aFRIAAAAMgAABiJ0clRSAAAAJAAABlRmaUZJAAAARgAABnho
+ckhSAAAAPgAABr5wbFBMAAAASgAABvxydVJVAAAAOgAAB0ZlblVTAAAAPAAAB4BhckVHAAAALAAAB7wA
+VgFhAGUAbwBiAGUAYwBuAOEAIABzAGkAdgDhACAAZwBhAG0AYQAgADIALAAyAEcAZQBuAGUAcgBpAHMA
+awAgAGcAcgDlACAAMgAsADIAIABnAGEAbQBtAGEAcAByAG8AZgBpAGwARwBhAG0AbQBhACAAZABlACAA
+ZwByAGkAcwBvAHMAIABnAGUAbgDoAHIAaQBjAGEAIAAyAC4AMgBDHqUAdQAgAGgA7ABuAGgAIABNAOAA
+dQAgAHgA4QBtACAAQwBoAHUAbgBnACAARwBhAG0AbQBhACAAMgAuADIAUABlAHIAZgBpAGwAIABHAGUA
+bgDpAHIAaQBjAG8AIABkAGEAIABHAGEAbQBhACAAZABlACAAQwBpAG4AegBhAHMAIAAyACwAMgQXBDAE
+MwQwBDsETAQ9BDAAIABHAHIAYQB5AC0EMwQwBDwEMAAgADIALgAyAFAAcgBvAGYAaQBsACAAZwDpAG4A
+6QByAGkAcQB1AGUAIABnAHIAaQBzACAAZwBhAG0AbQBhACAAMgAsADIAwQBsAHQAYQBsAOEAbgBvAHMA
+IABzAHoA/AByAGsAZQAgAGcAYQBtAG0AYQAgADIALgAykBp1KHBwlo5RSV6mACAAMgAuADIAIIJyX2lj
+z4/wAEcAZQBuAGUAcgBpAHMAawAgAGcAcgDlACAAZwBhAG0AbQBhACAAMgAsADIALQBwAHIAbwBmAGkA
+bABPAGIAZQBjAG4A4QAgAWEAZQBkAOEAIABnAGEAbQBhACAAMgAuADIF0gXQBd4F1AAgBdAF5AXVBegA
+IAXbBdwF3AXZACAAMgAuADIAUAByAG8AZgBpAGwAbwAgAGcAcgBpAGcAaQBvACAAZwBlAG4AZQByAGkA
+YwBvACAAZABlAGwAbABhACAAZwBhAG0AbQBhACAAMgAsADIARwBhAG0AYQAgAGcAcgBpACAAZwBlAG4A
+ZQByAGkAYwEDACAAMgAsADIAQQBsAGwAZwBlAG0AZQBpAG4AZQBzACAARwByAGEAdQBzAHQAdQBmAGUA
+bgAtAFAAcgBvAGYAaQBsACAARwBhAG0AbQBhACAAMgAsADLHfLwYACDWjMDJACCsELnIACAAMgAuADIA
+INUEuFzTDMd8Zm6QGnBwXqZ8+2VwACAAMgAuADIAIGPPj/Blh072TgCCLDCwMOwwpDCsMPMw3gAgADIA
+LgAyACAw1zDtMNUwoTCkMOsDkwO1A70DuQO6A8wAIAOTA7oDwQO5ACADkwOsA7wDvAOxACAAMgAuADIA
+UABlAHIAZgBpAGwAIABnAGUAbgDpAHIAaQBjAG8AIABkAGUAIABjAGkAbgB6AGUAbgB0AG8AcwAgAGQA
+YQAgAEcAYQBtAG0AYQAgADIALAAyAEEAbABnAGUAbQBlAGUAbgAgAGcAcgBpAGoAcwAgAGcAYQBtAG0A
+YQAgADIALAAyAC0AcAByAG8AZgBpAGUAbABQAGUAcgBmAGkAbAAgAGcAZQBuAOkAcgBpAGMAbwAgAGQA
+ZQAgAGcAYQBtAG0AYQAgAGQAZQAgAGcAcgBpAHMAZQBzACAAMgAsADIOIw4xDgcOKg41DkEOAQ4hDiEO
+Mg5ADgEOIw4iDkwOFw4xDkgOJw5EDhsAIAAyAC4AMgBHAGUAbgBlAGwAIABHAHIAaQAgAEcAYQBtAGEA
+IAAyACwAMgBZAGwAZQBpAG4AZQBuACAAaABhAHIAbQBhAGEAbgAgAGcAYQBtAG0AYQAgADIALAAyACAA
+LQBwAHIAbwBmAGkAaQBsAGkARwBlAG4AZQByAGkBDQBrAGkAIABHAHIAYQB5ACAARwBhAG0AbQBhACAA
+MgAuADIAIABwAHIAbwBmAGkAbABVAG4AaQB3AGUAcgBzAGEAbABuAHkAIABwAHIAbwBmAGkAbAAgAHMA
+egBhAHIAbwFbAGMAaQAgAGcAYQBtAG0AYQAgADIALAAyBB4EMQRJBDAETwAgBEEENQRABDAETwAgBDME
+MAQ8BDwEMAAgADIALAAyAC0EPwRABD4ERAQ4BDsETABHAGUAbgBlAHIAaQBjACAARwByAGEAeQAgAEcA
+YQBtAG0AYQAgADIALgAyACAAUAByAG8AZgBpAGwAZQY6BicGRQYnACAAMgAuADIAIAZEBkgGRgAgBjEG
+RQYnBi8GSgAgBjkGJwZFdGV4dAAAAABDb3B5cmlnaHQgQXBwbGUgSW5jLiwgMjAxMgAAWFlaIAAAAAAA
+APNRAAEAAAABFsxjdXJ2AAAAAAAABAAAAAAFAAoADwAUABkAHgAjACgALQAyADcAOwBAAEUASgBPAFQA
+WQBeAGMAaABtAHIAdwB8AIEAhgCLAJAAlQCaAJ8ApACpAK4AsgC3ALwAwQDGAMsA0ADVANsA4ADlAOsA
+8AD2APsBAQEHAQ0BEwEZAR8BJQErATIBOAE+AUUBTAFSAVkBYAFnAW4BdQF8AYMBiwGSAZoBoQGpAbEB
+uQHBAckB0QHZAeEB6QHyAfoCAwIMAhQCHQImAi8COAJBAksCVAJdAmcCcQJ6AoQCjgKYAqICrAK2AsEC
+ywLVAuAC6wL1AwADCwMWAyEDLQM4A0MDTwNaA2YDcgN+A4oDlgOiA64DugPHA9MD4APsA/kEBgQTBCAE
+LQQ7BEgEVQRjBHEEfgSMBJoEqAS2BMQE0wThBPAE/gUNBRwFKwU6BUkFWAVnBXcFhgWWBaYFtQXFBdUF
+5QX2BgYGFgYnBjcGSAZZBmoGewaMBp0GrwbABtEG4wb1BwcHGQcrBz0HTwdhB3QHhgeZB6wHvwfSB+UH
++AgLCB8IMghGCFoIbgiCCJYIqgi+CNII5wj7CRAJJQk6CU8JZAl5CY8JpAm6Cc8J5Qn7ChEKJwo9ClQK
+agqBCpgKrgrFCtwK8wsLCyILOQtRC2kLgAuYC7ALyAvhC/kMEgwqDEMMXAx1DI4MpwzADNkM8w0NDSYN
+QA1aDXQNjg2pDcMN3g34DhMOLg5JDmQOfw6bDrYO0g7uDwkPJQ9BD14Peg+WD7MPzw/sEAkQJhBDEGEQ
+fhCbELkQ1xD1ERMRMRFPEW0RjBGqEckR6BIHEiYSRRJkEoQSoxLDEuMTAxMjE0MTYxODE6QTxRPlFAYU
+JxRJFGoUixStFM4U8BUSFTQVVhV4FZsVvRXgFgMWJhZJFmwWjxayFtYW+hcdF0EXZReJF64X0hf3GBsY
+QBhlGIoYrxjVGPoZIBlFGWsZkRm3Gd0aBBoqGlEadxqeGsUa7BsUGzsbYxuKG7Ib2hwCHCocUhx7HKMc
+zBz1HR4dRx1wHZkdwx3sHhYeQB5qHpQevh7pHxMfPh9pH5Qfvx/qIBUgQSBsIJggxCDwIRwhSCF1IaEh
+ziH7IiciVSKCIq8i3SMKIzgjZiOUI8Ij8CQfJE0kfCSrJNolCSU4JWgllyXHJfcmJyZXJocmtyboJxgn
+SSd6J6sn3CgNKD8ocSiiKNQpBik4KWspnSnQKgIqNSpoKpsqzysCKzYraSudK9EsBSw5LG4soizXLQwt
+QS12Last4S4WLkwugi63Lu4vJC9aL5Evxy/+MDUwbDCkMNsxEjFKMYIxujHyMioyYzKbMtQzDTNGM38z
+uDPxNCs0ZTSeNNg1EzVNNYc1wjX9Njc2cjauNuk3JDdgN5w31zgUOFA4jDjIOQU5Qjl/Obw5+To2OnQ6
+sjrvOy07azuqO+g8JzxlPKQ84z0iPWE9oT3gPiA+YD6gPuA/IT9hP6I/4kAjQGRApkDnQSlBakGsQe5C
+MEJyQrVC90M6Q31DwEQDREdEikTORRJFVUWaRd5GIkZnRqtG8Ec1R3tHwEgFSEtIkUjXSR1JY0mpSfBK
+N0p9SsRLDEtTS5pL4kwqTHJMuk0CTUpNk03cTiVObk63TwBPSU+TT91QJ1BxULtRBlFQUZtR5lIxUnxS
+x1MTU19TqlP2VEJUj1TbVShVdVXCVg9WXFapVvdXRFeSV+BYL1h9WMtZGllpWbhaB1pWWqZa9VtFW5Vb
+5Vw1XIZc1l0nXXhdyV4aXmxevV8PX2Ffs2AFYFdgqmD8YU9homH1YklinGLwY0Njl2PrZEBklGTpZT1l
+kmXnZj1mkmboZz1nk2fpaD9olmjsaUNpmmnxakhqn2r3a09rp2v/bFdsr20IbWBtuW4SbmtuxG8eb3hv
+0XArcIZw4HE6cZVx8HJLcqZzAXNdc7h0FHRwdMx1KHWFdeF2Pnabdvh3VnezeBF4bnjMeSp5iXnnekZ6
+pXsEe2N7wnwhfIF84X1BfaF+AX5ifsJ/I3+Ef+WAR4CogQqBa4HNgjCCkoL0g1eDuoQdhICE44VHhauG
+DoZyhteHO4efiASIaYjOiTOJmYn+imSKyoswi5aL/IxjjMqNMY2Yjf+OZo7OjzaPnpAGkG6Q1pE/kaiS
+EZJ6kuOTTZO2lCCUipT0lV+VyZY0lp+XCpd1l+CYTJi4mSSZkJn8mmia1ZtCm6+cHJyJnPedZJ3SnkCe
+rp8dn4uf+qBpoNihR6G2oiailqMGo3aj5qRWpMelOKWpphqmi6b9p26n4KhSqMSpN6mpqhyqj6sCq3Wr
+6axcrNCtRK24ri2uoa8Wr4uwALB1sOqxYLHWskuywrM4s660JbSctRO1irYBtnm28Ldot+C4WbjRuUq5
+wro7urW7LrunvCG8m70VvY++Cr6Evv+/er/1wHDA7MFnwePCX8Lbw1jD1MRRxM7FS8XIxkbGw8dBx7/I
+Pci8yTrJuco4yrfLNsu2zDXMtc01zbXONs62zzfPuNA50LrRPNG+0j/SwdNE08bUSdTL1U7V0dZV1tjX
+XNfg2GTY6Nls2fHadtr724DcBdyK3RDdlt4c3qLfKd+v4DbgveFE4cziU+Lb42Pj6+Rz5PzlhOYN5pbn
+H+ep6DLovOlG6dDqW+rl63Dr++yG7RHtnO4o7rTvQO/M8Fjw5fFy8f/yjPMZ86f0NPTC9VD13vZt9vv3
+ivgZ+Kj5OPnH+lf65/t3/Af8mP0p/br+S/7c/23//4AO0iUmSEldTlNNdXRhYmxlRGF0YaNISipWTlNE
+YXRh0iUmTE1cTlNDb2xvclNwYWNlok4qXE5TQ29sb3JTcGFjZdIlJlBRV05TQ29sb3KiUCrSJSZTVFdO
+U0ltYWdlolMqXxAPTlNLZXllZEFyY2hpdmVy0VdYVHJvb3SAAQAIABEAGgAjAC0AMgA3AEwAUgBdAGQA
+awB4AH8AhwCJAIsAkACSAJQAmwCgAKsArQCvALEAtgC5ALsAvQC/AMEAxgDdAN8A4QmpCa4JuQnCCdUJ
+2QnkCe0J8gn6Cf0KAgoRChUKIAooCjUKQgpXClwKYApiCmQKZgpvCnQKegqCCoQKhgqICooKjwqXHAMc
+BRwKHBgcHBwjHCgcNRw4HEUcShxSHFUcWhxiHGUcdxx6HH8AAAAAAAACAQAAAAAAAABZAAAAAAAAAAAA
+AAAAAAAcgQ
+</mutableData>
+        </image>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="33H-C9-HL1"/>
+        <segue reference="ZLu-jR-S8g"/>
     </inferredMetricsTieBreakers>
 </document>
