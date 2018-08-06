@@ -15,7 +15,24 @@
 		16C51E6921133D0A005866DA /* MathParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16C51E6721133CFA005866DA /* MathParser.framework */; };
 		16C51E6A21133D0A005866DA /* MathParser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16C51E6721133CFA005866DA /* MathParser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		16C761342114F0D20088EFEA /* SYFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C761332114F0D20088EFEA /* SYFlatButton.m */; };
+		16DA831A211886E7002BFDC9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DA8301211884E9002BFDC9 /* NotificationCenter.framework */; };
+		16DA831D211886E7002BFDC9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA831C211886E7002BFDC9 /* TodayViewController.swift */; };
+		16DA8320211886E7002BFDC9 /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16DA831E211886E7002BFDC9 /* TodayViewController.xib */; };
+		16DA8324211886E7002BFDC9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16DA8322211886E7002BFDC9 /* InfoPlist.strings */; };
+		16DA8328211886E7002BFDC9 /* Calx Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 16DA8319211886E6002BFDC9 /* Calx Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		16DA832D211888E3002BFDC9 /* MathParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DA832C211888E3002BFDC9 /* MathParser.framework */; };
+		16DA833421188AB4002BFDC9 /* SYFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DA833321188AB4002BFDC9 /* SYFlatButton.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		16DA8326211886E7002BFDC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16AB39EC211245E80021778A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16DA8318211886E6002BFDC9;
+			remoteInfo = "Calx Widget";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		16C51E6B21133D0A005866DA /* Embed Frameworks */ = {
@@ -27,6 +44,17 @@
 				16C51E6A21133D0A005866DA /* MathParser.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16DA8314211884E9002BFDC9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				16DA8328211886E7002BFDC9 /* Calx Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -45,6 +73,17 @@
 		16C761322114F0D20088EFEA /* SYFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYFlatButton.h; sourceTree = "<group>"; };
 		16C761332114F0D20088EFEA /* SYFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYFlatButton.m; sourceTree = "<group>"; };
 		16C761352114F3C30088EFEA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		16DA8301211884E9002BFDC9 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		16DA8319211886E6002BFDC9 /* Calx Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Calx Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		16DA831C211886E7002BFDC9 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		16DA831F211886E7002BFDC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TodayViewController.xib; sourceTree = "<group>"; };
+		16DA8321211886E7002BFDC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16DA8323211886E7002BFDC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		16DA8325211886E7002BFDC9 /* Calx_Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Calx_Widget.entitlements; sourceTree = "<group>"; };
+		16DA832C211888E3002BFDC9 /* MathParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MathParser.framework; sourceTree = SOURCE_ROOT; };
+		16DA832E21188902002BFDC9 /* Calx Widget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Calx Widget-Bridging-Header.h"; sourceTree = "<group>"; };
+		16DA833221188AAB002BFDC9 /* SYFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYFlatButton.h; path = Calx/SYFlatButton.h; sourceTree = SOURCE_ROOT; };
+		16DA833321188AB4002BFDC9 /* SYFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYFlatButton.m; path = Calx/SYFlatButton.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +95,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		16DA8316211886E6002BFDC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16DA831A211886E7002BFDC9 /* NotificationCenter.framework in Frameworks */,
+				16DA832D211888E3002BFDC9 /* MathParser.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		16AB39EB211245E80021778A = {
 			isa = PBXGroup;
 			children = (
+				16C761352114F3C30088EFEA /* README.md */,
 				16AB39F6211245E90021778A /* Calx */,
+				16DA831B211886E7002BFDC9 /* Calx Widget */,
+				16DA8300211884E9002BFDC9 /* Frameworks */,
 				16AB39F5211245E90021778A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				16AB39F4211245E90021778A /* Calx.app */,
+				16DA8319211886E6002BFDC9 /* Calx Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,7 +135,6 @@
 				168B96A82114A4CD00999B68 /* EventMonitor.swift */,
 				16AB39FB211245EB0021778A /* Assets.xcassets */,
 				16AB39FD211245EB0021778A /* Main.storyboard */,
-				16C761352114F3C30088EFEA /* README.md */,
 				16AB3A00211245EB0021778A /* Info.plist */,
 				16AB3A01211245EB0021778A /* Calx.entitlements */,
 				16C761312114F0D20088EFEA /* Calx-Bridging-Header.h */,
@@ -92,6 +143,30 @@
 				16C51E6721133CFA005866DA /* MathParser.framework */,
 			);
 			path = Calx;
+			sourceTree = "<group>";
+		};
+		16DA8300211884E9002BFDC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16DA8301211884E9002BFDC9 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		16DA831B211886E7002BFDC9 /* Calx Widget */ = {
+			isa = PBXGroup;
+			children = (
+				16DA831C211886E7002BFDC9 /* TodayViewController.swift */,
+				16DA832E21188902002BFDC9 /* Calx Widget-Bridging-Header.h */,
+				16DA833321188AB4002BFDC9 /* SYFlatButton.m */,
+				16DA833221188AAB002BFDC9 /* SYFlatButton.h */,
+				16DA832C211888E3002BFDC9 /* MathParser.framework */,
+				16DA831E211886E7002BFDC9 /* TodayViewController.xib */,
+				16DA8321211886E7002BFDC9 /* Info.plist */,
+				16DA8322211886E7002BFDC9 /* InfoPlist.strings */,
+				16DA8325211886E7002BFDC9 /* Calx_Widget.entitlements */,
+			);
+			path = "Calx Widget";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,15 +180,34 @@
 				16AB39F1211245E90021778A /* Frameworks */,
 				16AB39F2211245E90021778A /* Resources */,
 				16C51E6B21133D0A005866DA /* Embed Frameworks */,
+				16DA8314211884E9002BFDC9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				16DA8327211886E7002BFDC9 /* PBXTargetDependency */,
 			);
 			name = Calx;
 			productName = Calx;
 			productReference = 16AB39F4211245E90021778A /* Calx.app */;
 			productType = "com.apple.product-type.application";
+		};
+		16DA8318211886E6002BFDC9 /* Calx Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16DA8329211886E7002BFDC9 /* Build configuration list for PBXNativeTarget "Calx Widget" */;
+			buildPhases = (
+				16DA8315211886E6002BFDC9 /* Sources */,
+				16DA8316211886E6002BFDC9 /* Frameworks */,
+				16DA8317211886E6002BFDC9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Calx Widget";
+			productName = "Calx Widget";
+			productReference = 16DA8319211886E6002BFDC9 /* Calx Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -126,6 +220,10 @@
 				ORGANIZATIONNAME = "Evan David";
 				TargetAttributes = {
 					16AB39F3211245E90021778A = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					16DA8318211886E6002BFDC9 = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 0940;
 					};
@@ -145,6 +243,7 @@
 			projectRoot = "";
 			targets = (
 				16AB39F3211245E90021778A /* Calx */,
+				16DA8318211886E6002BFDC9 /* Calx Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -156,6 +255,15 @@
 			files = (
 				16AB39FC211245EB0021778A /* Assets.xcassets in Resources */,
 				16AB39FF211245EB0021778A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16DA8317211886E6002BFDC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16DA8320211886E7002BFDC9 /* TodayViewController.xib in Resources */,
+				16DA8324211886E7002BFDC9 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +281,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		16DA8315211886E6002BFDC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16DA833421188AB4002BFDC9 /* SYFlatButton.m in Sources */,
+				16DA831D211886E7002BFDC9 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		16DA8327211886E7002BFDC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16DA8318211886E6002BFDC9 /* Calx Widget */;
+			targetProxy = 16DA8326211886E7002BFDC9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		16AB39FD211245EB0021778A /* Main.storyboard */ = {
@@ -182,6 +307,22 @@
 				16AB39FE211245EB0021778A /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		16DA831E211886E7002BFDC9 /* TodayViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16DA831F211886E7002BFDC9 /* Base */,
+			);
+			name = TodayViewController.xib;
+			sourceTree = "<group>";
+		};
+		16DA8322211886E7002BFDC9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16DA8323211886E7002BFDC9 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -303,6 +444,7 @@
 		16AB3A05211245EB0021778A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Calx/Calx.entitlements;
@@ -329,6 +471,7 @@
 		16AB3A06211245EB0021778A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Calx/Calx.entitlements;
@@ -351,6 +494,57 @@
 			};
 			name = Release;
 		};
+		16DA832A211886E7002BFDC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Calx Widget/Calx_Widget.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Calx Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evandavid.Calx.Calx-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Calx Widget/Calx Widget-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		16DA832B211886E7002BFDC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Calx Widget/Calx_Widget.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Calx Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evandavid.Calx.Calx-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Calx Widget/Calx Widget-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -368,6 +562,15 @@
 			buildConfigurations = (
 				16AB3A05211245EB0021778A /* Debug */,
 				16AB3A06211245EB0021778A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16DA8329211886E7002BFDC9 /* Build configuration list for PBXNativeTarget "Calx Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16DA832A211886E7002BFDC9 /* Debug */,
+				16DA832B211886E7002BFDC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
