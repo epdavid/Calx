@@ -18,6 +18,7 @@ class ViewController: NSViewController {
     let pasteboard = NSPasteboard.general
     var answer:String?
     static let defaults = UserDefaults.standard
+    static var dark = ViewController.defaults.bool(forKey: "dark")
     
     @IBAction func toggleScientific(_ sender: Any) {
         if (ViewController.normal) {
@@ -29,7 +30,12 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        ViewController.dark = ViewController.defaults.bool(forKey: "dark")
+        if (ViewController.defaults.bool(forKey: "dark")) {
+            colorSchemeText?.title = "Light Mode"
+        } else {
+            colorSchemeText?.title = "Dark Mode"
+        }
         
         NSApplication.shared.activate(ignoringOtherApps: true) // Makes window active upon loading so calculations can be made straight away
         if (ViewController.defaults.integer(forKey: "angleMode") == 1 && degRad != nil) {
@@ -280,28 +286,31 @@ class ViewController: NSViewController {
             let value = try ViewController.evaluator.evaluate(expression)
             
             resultFieldMut = "\(value)"
+            
+            if resultFieldMut.suffix(2) == ".0" {
+                resultFieldMut.removeLast(2)
+            }
+            justCalculated = true
+            answer = resultFieldMut
+            if let ans = answer {
+                if (ans.count <= 10 && answerField != nil){
+                    answerField.stringValue = "ans: \(ans)"
+                }
+            }
         } catch {
+            NSSound.beep()
+            resultFieldMut = resultFieldMut.replacingOccurrences(of: "**", with: "^")
             if (parenthAccum != 0) {
                 changeCopyText(str: "Close your parentheses!")
             } else {
                 changeCopyText(str: "Invalid input")
-                
             }
         }
-        if resultFieldMut.suffix(2) == ".0" {
-            resultFieldMut.removeLast(2)
-        }
-        justCalculated = true
-        answer = resultFieldMut
-        if let ans = answer {
-            if (ans.count <= 10 && answerField != nil){
-                answerField.stringValue = "ans: \(ans)"
-            }
-        }
+        
     }
     
     @IBAction func calcDot(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         if (resultFieldMut == "0" || justCalculated) {
             resultFieldMut = "0."
         }
@@ -314,7 +323,7 @@ class ViewController: NSViewController {
         justCalculated = false
     }
     @IBAction func calc0(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         if (resultFieldMut != "0" && !checkOperator()) {
             resultFieldMut += "0"
         }
@@ -323,42 +332,42 @@ class ViewController: NSViewController {
    
     @IBAction func calc1(_ sender: Any) {
         calcNum(number: 1)
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
     }
     @IBAction func calc2(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         calcNum(number: 2)
     }
     @IBAction func calc3(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         calcNum(number: 3)
     }
     @IBAction func calc4(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         calcNum(number: 4)
     }
     @IBAction func calc5(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         calcNum(number: 5)
     }
     @IBAction func calc6(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         calcNum(number: 6)
     }
     @IBAction func calc7(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         calcNum(number: 7)
     }
     @IBAction func calc8(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         calcNum(number: 8)
     }
     @IBAction func calc9(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         calcNum(number: 9)
     }
     @IBAction func calcOpenP(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         if (resultFieldMut == "0") {
             resultFieldMut = "("
             parenthAccum += 1
@@ -370,7 +379,7 @@ class ViewController: NSViewController {
         justCalculated = false
     }
     @IBAction func calcCloseP(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         if (parenthAccum != 0) {
             resultFieldMut += ")"
             parenthAccum -= 1
@@ -379,7 +388,7 @@ class ViewController: NSViewController {
     }
     
     @IBAction func calcClear(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        animateSelf(sender as! SYFlatButton) 
         resultFieldMut = "0"
         justCalculated = false
         parenthAccum = 0
@@ -420,42 +429,42 @@ class ViewController: NSViewController {
     }
     
     @IBAction func sin(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         trigFunctions(function: "sin")
     }
     
     @IBAction func arcsin(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         trigFunctions(function: "asin")
     }
     
     @IBAction func cos(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         trigFunctions(function: "cos")
     }
     
     @IBAction func arccos(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         trigFunctions(function: "acos")
     }
     
     @IBAction func tan(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         trigFunctions(function: "tan")
     }
     
     @IBAction func arctan(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         trigFunctions(function: "atan")
     }
     
     @IBAction func pi(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         calcNum(str: "π")
     }
     
     @IBAction func pow(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         if (!checkOperator() && resultFieldMut != "0") {
             resultFieldMut += "^("
             parenthAccum += 1
@@ -464,34 +473,34 @@ class ViewController: NSViewController {
     }
     
     @IBAction func euler(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         calcNum(str: "e")
     }
     
     @IBAction func natlog(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         trigFunctions(function: "ln")
     }
     
     @IBAction func log10(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         trigFunctions(function: "log")
     }
     
     @IBAction func squared(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         if (!checkOperator() && resultFieldMut != "0") {
             resultFieldMut += "²"
             justCalculated = false
         }
     }
     @IBAction func squareRoot(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         trigFunctions(function: "√")
     }
     
     @IBAction func factorial(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         if (resultFieldMut != "0" && !checkOperator()) {
             resultFieldMut += "!"
         }
@@ -499,7 +508,7 @@ class ViewController: NSViewController {
     }
     
     @IBAction func timesTenToThe(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         if (!checkOperator() && resultFieldMut != "0") {
             resultFieldMut += "E"
             justCalculated = false
@@ -507,21 +516,21 @@ class ViewController: NSViewController {
     }
     
     @IBAction func oneOver(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         if (!checkOperator() && resultFieldMut != "0") {
             resultFieldMut += "⁻¹"
             justCalculated = false
         }
     }
     @IBAction func percentify(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         resultFieldMut.insert("(", at: resultFieldMut.startIndex)
         resultFieldMut.append(") / 100")
         calculate((Any).self)
     }
     
     @IBAction func ansInsert(_ sender: Any) {
-        animateSelf(sender as! SYFlatButton)
+        if (ViewController.dark) { animateSelf(sender as! SYFlatButton) }
         if (answer != nil) {
             calcNum(str: "ans")
         } else {
@@ -532,6 +541,7 @@ class ViewController: NSViewController {
     //____DEGREE RADIANS CONTROL____
     
     @IBOutlet var degRad: SYFlatButton!
+    
     
     @IBAction func degRadClick(_ sender: Any) {
         switch ViewController.evaluator.angleMeasurementMode {
@@ -556,10 +566,40 @@ class ViewController: NSViewController {
     }
     //_____HELP WINDOW_____
     
+    @IBAction func loadHelp(_ sender: Any) {
+        
+    }
+    
     @IBAction func close(_ sender: Any) {
         view.window?.close()
     }
+    
+    @IBOutlet var colorSchemeText:NSButton!
+    
+    @IBAction func colorSchemeButton(_ sender: Any) {
+        if (ViewController.dark) {
+            ViewController.dark = false
+            colorSchemeText.title = "Dark Mode"
+            ViewController.defaults.set(false, forKey: "dark")
+            if (ViewController.normal) {
+                showNormal()
+            } else {
+                showScientific()
+            }
+        } else {
+            ViewController.dark = true
+            colorSchemeText.title = "Light Mode"
+            ViewController.defaults.set(true, forKey: "dark")
+            if (ViewController.normal) {
+                showNormal()
+            } else {
+                showScientific()
+            }
+        }
+    }
+    
 }
+
 
 
 
@@ -570,7 +610,13 @@ extension ViewController {
         //1.
         let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
         //2.
-        let identifier = NSStoryboard.SceneIdentifier(rawValue: "standardDark")
+        var identifier:NSStoryboard.SceneIdentifier
+        if (ViewController.dark) {
+            identifier = NSStoryboard.SceneIdentifier(rawValue: "standardDark")
+        } else{
+           identifier = NSStoryboard.SceneIdentifier(rawValue: "standardLight")
+        }
+        
         //3.
         guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? ViewController else {
             fatalError("HELP")
@@ -580,7 +626,12 @@ extension ViewController {
     
     static func freshScientificController() -> ViewController {
         let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
-        let identifier = NSStoryboard.SceneIdentifier(rawValue: "scientificDark")
+        var identifier:NSStoryboard.SceneIdentifier
+        if (ViewController.dark) {
+            identifier = NSStoryboard.SceneIdentifier(rawValue: "scientificDark")
+        } else{
+            identifier = NSStoryboard.SceneIdentifier(rawValue: "scientificLight")
+        }
         guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? ViewController else {
             fatalError("HELP")
         }

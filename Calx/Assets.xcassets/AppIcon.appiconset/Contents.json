@@ -3,60 +3,61 @@
     {
       "size" : "16x16",
       "idiom" : "mac",
-      "filename" : "abacus-8.png",
+      "filename" : "Template@0,015625x.png",
       "scale" : "1x"
     },
     {
       "size" : "16x16",
       "idiom" : "mac",
-      "filename" : "abacus-7.png",
+      "filename" : "Template@0,03125x-1.png",
       "scale" : "2x"
     },
     {
       "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "abacus-6.png",
+      "filename" : "Template@0,03125x.png",
       "scale" : "1x"
     },
     {
       "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "abacus-5.png",
+      "filename" : "Template@0,0625x.png",
       "scale" : "2x"
     },
     {
       "size" : "128x128",
       "idiom" : "mac",
-      "filename" : "abacus-4.png",
+      "filename" : "Template@0,125x.png",
       "scale" : "1x"
     },
     {
       "size" : "128x128",
       "idiom" : "mac",
-      "filename" : "abacus-3.png",
+      "filename" : "Template@0,25x-1.png",
       "scale" : "2x"
     },
     {
       "size" : "256x256",
       "idiom" : "mac",
-      "filename" : "abacus-2.png",
+      "filename" : "Template@0,25x.png",
       "scale" : "1x"
     },
     {
       "size" : "256x256",
       "idiom" : "mac",
-      "filename" : "abacus-1.png",
+      "filename" : "Template@0,5x-1.png",
       "scale" : "2x"
     },
     {
       "size" : "512x512",
       "idiom" : "mac",
-      "filename" : "abacus.png",
+      "filename" : "Template@0,5x.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "mac",
       "size" : "512x512",
+      "idiom" : "mac",
+      "filename" : "Template.png",
       "scale" : "2x"
     }
   ],
