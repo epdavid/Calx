@@ -172,7 +172,7 @@ class ViewController: NSViewController {
                         }
                         resultField.stringValue = resultFieldMut
                     }
-                }
+                } 
                 
                 if (resultField.stringValue.count >= 9 && resultField.font == NSFont.systemFont(ofSize: 50)) {
                     resultField.font = NSFont.systemFont(ofSize: 28)
