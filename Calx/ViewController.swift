@@ -164,7 +164,7 @@ class ViewController: NSViewController {
                 //Fixing rounding problem to avoid values less than 1E-8
                 if (Double(resultFieldMut) != nil) {
                     var doubleResult = Double(resultFieldMut)
-                    if (abs(doubleResult!) <= 1E-8 && abs(doubleResult!) >= 0) {
+                    if (abs(doubleResult!) <= 1E-8 && abs(doubleResult!) > 0) {
                         doubleResult = floor(abs(doubleResult!))
                         resultFieldMut = "\(doubleResult!)"
                         if (resultFieldMut.suffix(2) == ".0") {
