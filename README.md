@@ -1,6 +1,6 @@
 #  Calx
 
-An ultra-convenient and full-featured scientific calculator for macOS!
+A menu bar based scientific calculator for macOS!
 
 ## [Download here!](https://github.com/epdavid/Calx/releases)
 
